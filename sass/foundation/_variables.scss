@@ -6,10 +6,13 @@ Theme Name: aki.code
 
 
 $color-primary: #0068b7;
-$color-text: #060e1d;
+$color-text: #1a1a1a;
 $color-main: #fff;
+$color-bg: #F9F9F9;
+$color-accent: #4ea1d5;
+$color-titleBg1: #E9E9E9;
+$color-titleBg2: #4E4E4E;
 
 
-$font-ja: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",
-  "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-$font-en: "poppins", sans-serif;
+$font-ja: hiragino-mincho-pron, "MS PMincho", sans-serif;
+$font-en: playfair-display, serif;

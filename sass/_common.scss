@@ -2,6 +2,12 @@
 
 /* ---------------- common -------------------- */
 
+html {
+  word-wrap: break-word;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
 *,
 *::before,
 *::after {

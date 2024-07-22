@@ -317,6 +317,13 @@ template {
 Theme Name: aki.code
 */
 /* ---------------- common -------------------- */
+html {
+  word-wrap: break-word;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -352,7 +359,7 @@ dd {
 
 body {
   color: #fff;
-  font-family: "poppins", sans-serif;
+  font-family: playfair-display, serif;
   line-height: 1;
   letter-spacing: 0.1em;
 }
@@ -381,3 +388,44 @@ img {
 }
 
 /* ---------------- header -------------------- */
+.header {
+  color: #1a1a1a;
+  padding: 2.7777777778% 5.5555555556%;
+}
+
+.header__inner {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+}
+
+.header__logo {
+  font-size: 4rem;
+  font-style: italic;
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.header__list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: clamp(2.8rem, 2.7777777778vw, 3.6rem);
+}
+
+.header__item {
+  margin-left: 5.5555555556vw;
+}
+
+.header__contact {
+  color: #4ea1d5;
+}

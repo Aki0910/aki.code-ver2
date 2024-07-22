@@ -1,3 +1,32 @@
 @use "foundation/index" as *;
 
 /* ---------------- header -------------------- */
+.header {
+    color: $color-text;
+    padding: (40/1440)*100% (80/1440)*100% ;
+}
+
+.header__inner {
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+}
+.header__logo {
+    font-size: 4rem;
+    font-style: italic;
+}
+.header__nav {
+    margin-left: auto;
+}
+.header__list {
+    align-items: center;
+    display: flex;
+    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
+}
+.header__item {
+
+    margin-left: (80/1440)*100vw;
+}
+.header__contact {
+    color: $color-accent;
+}
