@@ -1,1 +1,51 @@
 @use "foundation/index" as *;
+
+/* ===============================================
+# top-service
+=============================================== */
+.service {
+
+    .section__title {
+        color: $color-text;
+    
+        &::after {
+          content: "Service";
+          color: $color-titleBg1;
+        }
+    }
+}
+
+.service__content {
+
+}
+.service__list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.service__item {
+    line-height: 1.5;
+    width: (350/1440)*100vw;
+
+    &:nth-child(even) {
+        margin: (80/700)*100% 0 0 (80/700)*100%;
+    }
+
+}
+.service__number {
+    color: $color-titleBg1;
+    font-family: $font-en;
+    font-style: italic;
+    font-size: clamp(4rem,(64/1440)*100vw,6.4rem);
+    font-weight: 700;
+    line-height: 1;
+}
+.service__head {
+    font-size: clamp(2rem,(24/1440)*100vw,2.4rem);
+    margin-top: (16/350)*100%;
+}
+.service__description {
+    font-size: 1.6rem;
+    margin-top: (24/350)*100%;
+}

@@ -102,5 +102,71 @@
     </div>
 </section>
 
+<section id="service" class="service">
+    <div class="inner">
+        <h2 class="section__title">サービス</h2>
+        <div class="service__content">
+            <ol class="service__list">
+                <li class="service__item">
+                    <div class="service__number">01</div>
+                    <h3 class="service__head">デザイン</h3>
+                    <p class="service__description">
+                    ホームページのデザイン作成をいたします。
+                    まずは、ヒアリングにてご希望のデザインや
+                    サイトの方向性を決め、課題解決に努めます。
+                    一方通行にならないよう、一緒に作り上げていきましょう。
+                    </p>
+                </li>
+                <li class="service__item">
+                    <div class="service__number">02</div>
+                    <h3 class="service__head">Webサイト制作</h3>
+                    <p class="service__description">
+                    デザインを元にHTML / CSS / Java Scriptを
+                    使用したホームページ / ランディングページを作成いたします。
+                    SEO対策やレスポンシブに優れたサイトを作成いたします。
+                    作成後の管理も考えた丁寧なコーディングを心がけております。
+                    </p>
+                </li>
+                <li class="service__item">
+                    <div class="service__number">03</div>
+                    <h3 class="service__head">ワードプレス</h3>
+                    <p class="service__description">
+                    オリジナルテーマでの作成はもちろん、
+                    既存のWebサイトのwordpress化も対応いたします。
+                    セキュリティ / SEO対策などに必要なプラグインの導入もいたします。
+                    </p>
+                </li>
+                <li class="service__item">
+                    <div class="service__number">04</div>
+                    <h3 class="service__head">保守 / 管理</h3>
+                    <p class="service__description">
+                    Webサイトのバックアップ / プラグインの更新をいたします。
+                    また、テキスト修正や画像の差し替えなどの一部改修も行なっておりますので、お気軽にご相談ください。
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section id="topics" class="topics">
+    <div class="inner">
+        <h2 class="section__title">お知らせ</h2>
+        <div class="topics__content">
+            <ul class="topics__list">
+                <li class="topics__item">
+                    <a href="">
+                        <div class="topics__wrap">
+                            <div class="topics__date"></div>
+                            <h3 class="topics__category"></h3>
+                            <p class="topics__head"></p>
+                        </div>
+                    </a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</section>
 
 <?php get_footer(); ?>

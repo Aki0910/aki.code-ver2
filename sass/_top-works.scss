@@ -4,7 +4,12 @@
 # top-works
 =============================================== */
 
-.section__title {
+
+.works {
+  background: #3f3f3f;
+  margin-top: (200/1440)*100%;
+
+  .section__title {
     color: $color-main;
 
     &::after {
@@ -12,9 +17,6 @@
       color: $color-titleBg2;
     }
 }
-.works {
-  background: #3f3f3f;
-  margin-top: (200/1440)*100%;
 }
 .works__inner {
   padding: (216/1440)*100% 0 (120/1440)*100%;

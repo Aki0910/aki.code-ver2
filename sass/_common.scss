@@ -1,7 +1,8 @@
 @use "foundation/index" as *;
 
-/* ---------------- common -------------------- */
-
+/* ===============================================
+# common
+=============================================== */
 html {
   word-wrap: break-word;
   font-size: 62.5%;
@@ -50,6 +51,7 @@ a {
   color: inherit;
   cursor: pointer;
   display: block;
+  font-family: inherit;
   text-decoration: none;
   transition: all 0.5s;
 }
@@ -62,10 +64,9 @@ img {
 
 .inner {
   margin: 0 auto;
-  max-width: 1280px;
-  padding: (160/1440)*100% 0;
-  width: (1280/1440)*100vw;
-
+  max-width: 1440px;
+  padding: (200/1440)*100% 0;
+  width: (1040/1440)*100vw;
 }
 
 .section__title {

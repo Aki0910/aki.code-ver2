@@ -316,7 +316,9 @@ template {
 /*
 Theme Name: aki.code
 */
-/* ---------------- common -------------------- */
+/* ===============================================
+# common
+=============================================== */
 html {
   word-wrap: break-word;
   font-size: 62.5%;
@@ -370,6 +372,7 @@ a {
   color: inherit;
   cursor: pointer;
   display: block;
+  font-family: inherit;
   text-decoration: none;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -384,9 +387,9 @@ img {
 
 .inner {
   margin: 0 auto;
-  max-width: 1280px;
-  padding: 11.1111111111% 0;
-  width: 88.8888888889vw;
+  max-width: 1440px;
+  padding: 13.8888888889% 0;
+  width: 72.2222222222vw;
 }
 
 .section__title {
@@ -456,6 +459,7 @@ img {
 }
 
 .header__logo {
+  font-family: playfair-display, serif;
   font-size: 4rem;
   font-style: italic;
 }
@@ -566,17 +570,16 @@ img {
 /* ===============================================
 # top-works
 =============================================== */
-.section__title {
-  color: #fff;
-}
-.section__title::after {
-  content: "Works";
-  color: #4E4E4E;
-}
-
 .works {
   background: #3f3f3f;
   margin-top: 13.8888888889%;
+}
+.works .section__title {
+  color: #fff;
+}
+.works .section__title::after {
+  content: "Works";
+  color: #4E4E4E;
 }
 
 .works__inner {
@@ -629,4 +632,56 @@ img {
 .works__role {
   font-size: 1.6rem;
   margin-top: 5%;
+}
+
+/* ===============================================
+# top-service
+=============================================== */
+.service .section__title {
+  color: #1a1a1a;
+}
+.service .section__title::after {
+  content: "Service";
+  color: #E9E9E9;
+}
+
+.service__list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.service__item {
+  line-height: 1.5;
+  width: 24.3055555556vw;
+}
+.service__item:nth-child(even) {
+  margin: 11.4285714286% 0 0 11.4285714286%;
+}
+
+.service__number {
+  color: #E9E9E9;
+  font-family: playfair-display, serif;
+  font-style: italic;
+  font-size: clamp(4rem, 4.4444444444vw, 6.4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.service__head {
+  font-size: clamp(2rem, 1.6666666667vw, 2.4rem);
+  margin-top: 4.5714285714%;
+}
+
+.service__description {
+  font-size: 1.6rem;
+  margin-top: 6.8571428571%;
 }
