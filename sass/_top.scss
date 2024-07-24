@@ -1,1 +1,38 @@
 @use "foundation/index" as *;
+
+/* ===============================================
+# top
+=============================================== */
+
+.top {
+    position: relative;
+    height: (825/1440)*100vw;
+}
+.top__list {
+}
+.top__item {
+    position: absolute;
+    top: (337/1440)*100vw;
+    left: (925/1440)*100vw;
+    transform: translate(-50%,-50%) rotate(45deg);
+    filter: grayscale(90%);
+    transition: all .3s ease 0s ;
+    
+    img {
+        border-radius: 10px;
+    }
+    &:hover {
+        filter: grayscale(0%);
+    }
+
+    &:nth-child(1) {
+        z-index: 100;
+    }
+}
+
+.top__item--large {
+    width: (300/1440)*100vw;
+}
+.top__item--small {
+    width: (150/1440)*100vw;
+}

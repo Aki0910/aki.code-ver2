@@ -5,11 +5,12 @@
 @use "common"; 
 @use "pagination"; 
 @use "header"; 
-@use "top"; 
+@use "top";
+@use "top-profile";
+@use "top-works";
 @use "archive"; 
 @use "single"; 
 @use "service"; 
-@use "profile"; 
 @use "contact-form";
 @use "footer"; 
 

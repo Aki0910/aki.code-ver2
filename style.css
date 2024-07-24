@@ -358,10 +358,12 @@ dd {
 }
 
 body {
-  color: #fff;
-  font-family: playfair-display, serif;
+  background: #F9F9F9;
+  color: #1a1a1a;
+  font-family: hiragino-mincho-pron, "MS PMincho", sans-serif;
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
 }
 
 a {
@@ -387,7 +389,57 @@ img {
   width: 88.8888888889vw;
 }
 
-/* ---------------- header -------------------- */
+.section__title {
+  font-family: hiragino-mincho-pron, "MS PMincho", sans-serif;
+  font-size: clamp(2.4rem, 2.2222222222vw, 3.2rem);
+  font-weight: 700;
+  position: relative;
+  z-index: 10;
+}
+.section__title::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  color: #E9E9E9;
+  font-family: playfair-display, serif;
+  font-size: clamp(8rem, 8.8888888889vw, 12.8rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  z-index: -1;
+}
+
+.button {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  border: 2px solid #4ea1d5;
+  position: relative;
+}
+
+.button__content {
+  position: absolute;
+  content: "";
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.button__img {
+  margin: 0 auto;
+  width: 6.4rem;
+}
+
+.button__text {
+  font-family: playfair-display, serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* ===============================================
+# header
+=============================================== */
 .header {
   color: #1a1a1a;
   padding: 2.7777777778% 5.5555555556%;
@@ -428,4 +480,153 @@ img {
 
 .header__contact {
   color: #4ea1d5;
+}
+
+/* ===============================================
+# top
+=============================================== */
+.top {
+  position: relative;
+  height: 57.2916666667vw;
+}
+
+.top__item {
+  position: absolute;
+  top: 23.4027777778vw;
+  left: 64.2361111111vw;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-filter: grayscale(90%);
+          filter: grayscale(90%);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.top__item img {
+  border-radius: 10px;
+}
+.top__item:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+.top__item:nth-child(1) {
+  z-index: 100;
+}
+
+.top__item--large {
+  width: 20.8333333333vw;
+}
+
+.top__item--small {
+  width: 10.4166666667vw;
+}
+
+/* ===============================================
+# top-profile
+=============================================== */
+.profile__inner {
+  margin-left: 13.8888888889%;
+  width: 44.7916666667vw;
+}
+
+.profile__name {
+  font-family: playfair-display, serif;
+  font-size: clamp(2.4rem, 2.2222222222vw, 3.2rem);
+  font-weight: 700;
+}
+
+.profile__hobby {
+  font-size: clamp(2rem, 1.6666666667vw, 2.4rem);
+  margin-top: 8.6821705426%;
+}
+
+.profile__desxcription {
+  font-size: clamp(2rem, 1.6666666667vw, 2.4rem);
+  line-height: 2;
+  margin-top: 6.2015503876%;
+}
+
+.sns__list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 6.2015503876%;
+}
+
+.sns__item {
+  margin-left: 6.2015503876%;
+  width: 2.7777777778vw;
+}
+
+/* ===============================================
+# top-works
+=============================================== */
+.section__title {
+  color: #fff;
+}
+.section__title::after {
+  content: "Works";
+  color: #4E4E4E;
+}
+
+.works {
+  background: #3f3f3f;
+  margin-top: 13.8888888889%;
+}
+
+.works__inner {
+  padding: 15% 0 8.3333333333%;
+}
+
+.works__title {
+  margin-left: 13.8888888889%;
+}
+
+.works__content {
+  width: 100%;
+  position: relative;
+  margin-top: 5.5555555556vw;
+  height: 29.4444444444vw;
+  overflow-x: hidden;
+}
+
+.works__list {
+  position: absolute;
+  width: 200%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 480px;
+}
+
+.works__item {
+  color: #fff;
+  width: 33.3333333333vw;
+}
+.works__item:not(:first-of-type) {
+  margin-left: 6.9444444444%;
+}
+
+.works__img {
+  overflow: hidden;
+}
+.works__img img:hover {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  scale: 1.1;
+}
+
+.works__company {
+  font-size: clamp(2rem, 1.6666666667vw, 2.4rem);
+  margin-top: 8.3333333333%;
+}
+
+.works__role {
+  font-size: 1.6rem;
+  margin-top: 5%;
 }

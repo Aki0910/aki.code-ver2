@@ -38,10 +38,12 @@ dd {
 }
 
 body {
-  color: $color-main;
-  font-family: $font-en;
+  background: $color-bg;
+  color: $color-text;
+  font-family: $font-ja;
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
 }
 
 a {
@@ -67,9 +69,47 @@ img {
 }
 
 .section__title {
+  font-family: $font-ja;
+  font-size: clamp(2.4rem,(32/1440)*100vw,3.2rem);
+  font-weight: 700;
+  position: relative;
+  z-index: 10;
 
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    color: $color-titleBg1;
+    font-family: $font-en;
+    font-size: clamp(8rem,(128/1440)*100vw,12.8rem);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    z-index: -1;
+  }
 }
 
 .button {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  border: 2px solid $color-accent;
+  position: relative;
+}
+.button__content {
+  position: absolute;
+  content: "";
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 
+}
+.button__img {
+  margin: 0 auto ;
+  width: 6.4rem;
+}
+.button__text {
+  font-family: $font-en;
+  font-size: 1.6rem;
+  line-height: 1.5;
 }

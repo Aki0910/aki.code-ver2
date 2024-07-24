@@ -1,0 +1,39 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# top-profile
+=============================================== */
+
+.profile {
+}
+.profile__inner {
+    margin-left: (200/1440)*100%;
+    width: (645/1440)*100vw;
+}
+.profile__list {
+}
+.profile__name {
+    font-family: $font-en;
+    font-size: clamp(2.4rem,(32/1440)*100vw,3.2rem);
+    font-weight: 700;
+}
+.profile__hobby {
+    font-size: clamp(2.0rem,(24/1440)*100vw,2.4rem);
+    margin-top: (56/645)*100%;
+}
+.profile__desxcription {
+    font-size: clamp(2.0rem,(24/1440)*100vw,2.4rem);
+    line-height: 2;
+    margin-top: (40/645)*100%;
+
+}
+.sns__list {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: (40/645)*100%;
+}
+.sns__item {
+    margin-left: (40/645)*100%;
+    width: (40/1440)*100vw;
+}

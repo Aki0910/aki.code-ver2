@@ -16,10 +16,36 @@ add_action('wp_enqueue_scripts','my_enqueue_styles');
 /**
  * 自作javascript読み込み
  */
+// function st_enqueue_scripts() {
+//     wp_enqueue_script('script',get_theme_file_uri('js/script.js'),array(),false,'all');
+//         // The core GSAP library
+//         wp_enqueue_script( 'gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array('script'), false, true );
+//         // ScrollTrigger - with gsap.js passed as a dependency
+//         wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap-js'), false, true );
+//         // Your animation code file - with gsap.js passed as a dependency
+//         wp_enqueue_script( 'gsap-js2', get_template_directory_uri() . 'js/app.js', array('gsap-js'), false, true );
+// }
+// add_action('wp_enqueue_scripts','st_enqueue_scripts');
+
+/**
+ * 自作JavaScript読み込み
+ */
 function st_enqueue_scripts() {
-    wp_enqueue_script('script',get_theme_file_uri('js/script.js'),array(),false,'all');
+    // The core GSAP library
+    wp_enqueue_script( 'gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), null, true );
+    
+    // ScrollTrigger - with gsap.js passed as a dependency
+    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap-js'), null, true );
+
+    // Your main script file
+    wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array('gsap-st'), null, true );
+
+    // Your animation code file - with gsap.js passed as a dependency
+    wp_enqueue_script( 'gsap-js2', get_template_directory_uri() . '/js/app.js', array('script'), null, true );
 }
-add_action('wp_enqueue_scripts','st_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'st_enqueue_scripts');
+
+
 
 /**
  * アイキャッチ画像

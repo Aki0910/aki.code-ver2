@@ -1,0 +1,65 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# top-works
+=============================================== */
+
+.section__title {
+    color: $color-main;
+
+    &::after {
+      content: "Works";
+      color: $color-titleBg2;
+    }
+}
+.works {
+  background: #3f3f3f;
+  margin-top: (200/1440)*100%;
+}
+.works__inner {
+  padding: (216/1440)*100% 0 (120/1440)*100%;
+}
+.works__title {
+  margin-left: (200/1440)*100%;
+}
+.works__content {
+  width: 100%;
+  position: relative;
+  margin-top: (80/1440)*100vw;
+  height: (424/1440)*100vw;
+  overflow-x: hidden;
+
+}
+
+.works__list {
+  position: absolute;
+  width: 200%;
+  display: flex;
+
+  margin-left: 480px;
+
+}
+.works__item {
+  color: $color-main;
+  width: (480/1440)*100vw;
+  
+  &:not(:first-of-type) {
+    margin-left: (200/2880)*100%;
+  }
+}
+.works__img {
+  overflow: hidden;
+  
+  img:hover {
+    transition: all .3s ease 0s;
+    scale: 1.1;
+  }
+}
+.works__company {
+  font-size: clamp(2.0rem,(24/1440)*100vw,2.4rem);
+  margin-top: (40/480)*100%;
+}
+.works__role {
+  font-size: 1.6rem;
+  margin-top: (24/480)*100%;
+}
