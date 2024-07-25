@@ -28,18 +28,16 @@
   width: 100%;
   position: relative;
   margin-top: (80/1440)*100vw;
-  height: (424/1440)*100vw;
+  height: (480/1440)*100vw;
   overflow-x: hidden;
-
 }
 
 .works__list {
   position: absolute;
   width: 200%;
   display: flex;
-
+  align-items: center;
   margin-left: 480px;
-
 }
 .works__item {
   color: $color-main;
@@ -51,17 +49,27 @@
 }
 .works__img {
   overflow: hidden;
+  scale: 1;
+
+  img {
+    transition: all .5s ease 0s;
+  }
   
   img:hover {
-    transition: all .3s ease 0s;
-    scale: 1.1;
+    transition: all .5s ease 0s;
+    scale: 1.05;
   }
 }
 .works__company {
-  font-size: clamp(2.0rem,(24/1440)*100vw,2.4rem);
+  font-size: clamp(1.8rem,(24/1440)*100vw,2.4rem);
   margin-top: (40/480)*100%;
 }
 .works__role {
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
   margin-top: (24/480)*100%;
+}
+.works__button {
+  border: 2px solid $color-main;
+  color: $color-main;
+  margin: 0 0 0 (120/1440)*100vw;
 }

@@ -58,14 +58,14 @@ a {
 
 img {
   object-fit: cover;
-  width: 100%;
   vertical-align: middle;
+  width: 100%;
 }
 
 .inner {
   margin: 0 auto;
   max-width: 1440px;
-  padding: (200/1440)*100% 0;
+  padding: (296/1440)*100% 0 0;
   width: (1040/1440)*100vw;
 }
 
@@ -95,7 +95,9 @@ img {
   height: 20rem;
   border-radius: 50%;
   border: 2px solid $color-accent;
+  color: $color-accent;
   position: relative;
+  margin-top: (80/1440)*100vw;
 }
 .button__content {
   position: absolute;
@@ -113,4 +115,27 @@ img {
   font-family: $font-en;
   font-size: 1.6rem;
   line-height: 1.5;
+}
+
+#stalker {
+  pointer-events: none;
+  position: fixed;
+  top: -1rem;     //座標調節（カーソル位置と円の中心を合わせる）
+  left: -1rem;   //座標調節（カーソル位置と円の中心を合わせる）
+  width: 2rem;   //マウスストーカーの直径
+  height: 2rem;  //マウスストーカーの直径
+  background: rgba(26, 26, 26, .5);
+  border-radius: 50%;
+  transition: transform 0.3s, top, 0.3s, left 0.3s, width 0.5s, height 0.5s, background-color 0.5s;
+  transition-timing-function: ease-out;
+  z-index: 999;
+
+  &.mouseover{
+    width: 20rem;
+    height: 20rem;
+    top: -10rem;
+    left: -10rem;
+    transition: .5s;
+    background: rgba(78, 161, 213, .7);
+  }
 }

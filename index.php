@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<div id="stalker"></div>
+
 
 <section class="top">
     <ul class="top__list">
@@ -62,41 +64,42 @@
         <h2 class="section__title works__title">実績紹介</h2>
         <div class="works__content">
             <ul class="works__list">
+
+                <?php
+                    $wp_query = new WP_Query();
+                    $my_posts = array(
+                        'post_type' => 'works',
+                        'posts_per_page' => '3',
+                    );
+
+                    $wp_query->query($my_posts);
+                    if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
+                        $obj = get_post_type_object($post->post_type); 
+                ?>
                 <li class="works__item">
                     <a href="">
                         <div class="works__img">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/img/works1.png')); ?>" alt="">
+                            <?php $pic = get_field('picture1'); if( !empty($pic) ): ?>
+                                <img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>" />
+                            <?php endif; ?>
                         </div>
-                        <h3 class="works__company">会社名様</h3>
-                        <p class="works__role">デザイン / コーディング / 保守・管理</p>
+                        <h3 class="works__company"><?php echo get_the_title(); ?></h3>
+                        <p class="works__role"><?php echo esc_html(get_post_meta(get_the_ID(), 'role', true)); ?></p>
                     </a>
                 </li>
-                <li class="works__item">
-                    <a href="">
-                        <div class="works__img">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/img/works1.png')); ?>" alt="">
-                        </div>
-                        <h3 class="works__company">会社名様</h3>
-                        <p class="works__role">デザイン / コーディング / 保守・管理</p>
-                    </a>
-                </li>
-                <li class="works__item">
-                    <a href="">
-                        <div class="works__img">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/img/works1.png')); ?>" alt="">
-                        </div>
-                        <h3 class="works__company">会社名様</h3>
-                        <p class="works__role">デザイン / コーディング / 保守・管理</p>
-                    </a>
-                </li>
-                <div class="button">
+                <?php endwhile;
+                    endif;
+                    wp_reset_postdata();
+                ?>
+
+                <a class="button works__button" href="">
                     <div class="button__content">
                         <div class="button__img">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow1.png')); ?>" alt="">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-white.png')); ?>" alt="">
                         </div>
                         <p class="button__text">VIEW ALL</p>
                     </div>
-                </div>
+                </a>
             </ul>
         </div>
     </div>
@@ -154,17 +157,105 @@
         <h2 class="section__title">お知らせ</h2>
         <div class="topics__content">
             <ul class="topics__list">
+                <?php
+                    $wp_query = new WP_Query();
+                    $my_posts = array(
+                        'post_type' => 'topics',
+                        'posts_per_page' => '3',
+                    );
+
+                    $wp_query->query($my_posts);
+                    if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
+                        $obj = get_post_type_object($post->post_type); 
+                ?>
                 <li class="topics__item">
-                    <a href="">
+                    <a class="topics__anchor" href="<?php the_permalink(); ?>">
                         <div class="topics__wrap">
-                            <div class="topics__date"></div>
-                            <h3 class="topics__category"></h3>
-                            <p class="topics__head"></p>
+                            <div class="topics__date"><?php echo get_the_date(); ?></div>
+                            <p class="topics__category">
+                                <?php
+                                    if ($terms = get_the_terms($post->ID, 'info')) {
+                                    foreach ( $terms as $term ) {
+                                    echo esc_html($term->name);
+                                    }
+                                    }
+                                ?>
+                            </p>
+                        </div>
+                        <h3 class="topics__head"><?php the_title(); ?></h3>
+                    </a>
+                </li>
+                <?php endwhile;
+                    endif;
+                    wp_reset_postdata();
+                ?>
+            </ul>
+            <a class="button topics__button" href="">
+                    <div class="button__content">
+                        <div class="button__img">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">
+                        </div>
+                        <p class="button__text">VIEW ALL</p>
+                    </div>
+                </a>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="blog">
+    <div class="inner">
+        <h2 class="section__title">ブログ</h2>
+        <div class="blog__content">
+            <ul class="blog__list">
+                <?php
+                    $wp_query = new WP_Query();
+                    $my_posts = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => '3',
+                    );
+
+                    $wp_query->query($my_posts);
+                    if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
+                        $obj = get_post_type_object($post->post_type); 
+                ?>
+                <li class="blog__item">
+                    <a class="blog__anchor" href="<?php the_permalink(); ?>">
+                        <div class="card">
+                            <div class="card__img">
+                                <?php if (has_post_thumbnail()) : ?>
+                                   <?php the_post_thumbnail('medium'); ?>
+                                <?php else: ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/代わりの画像までのパス" alt="">
+                                <?php endif; ?>
+                            </div>
+                            <div class="card__content">
+                                <div class="card__meta">
+                                    <?php
+                                        $cat = get_the_category();
+                                        $cat = $cat[0];
+                                    ?>
+                                    <p class="card__category"><?php echo $cat->name; ?></p>
+                                    <div class="card__date"><?php echo get_the_date(); ?></div>
+                                </div>
+                                <h3 class="card__head"><?php the_title(); ?></h3>
+                                <div class="card__more">Read More</div>
+                            </div>
                         </div>
                     </a>
                 </li>
-               
+                <?php endwhile;
+                    endif;
+                    wp_reset_postdata();
+                ?>
             </ul>
+            <a class="button blog__button" href="">
+                    <div class="button__content">
+                        <div class="button__img">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">
+                        </div>
+                        <p class="button__text">VIEW ALL</p>
+                    </div>
+                </a>
         </div>
     </div>
 </section>

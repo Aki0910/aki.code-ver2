@@ -1,0 +1,98 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# top-blog
+=============================================== */
+
+
+.blog {
+  margin-top: (200/1440)*100%;
+
+  .section__title {
+    color: $color-text;
+
+    &::after {
+      content: "Blog";
+      color: $color-titleBg1;
+    }
+}
+}
+.blog__inner {
+  padding: (216/1440)*100% 0 (120/1440)*100%;
+}
+.blog__title {
+  margin-left: (200/1440)*100%;
+}
+.blog__content {
+  margin-top: (120/1440)*100vw;
+}
+
+.blog__list {
+  margin-left: auto;
+  width: (700/1440)*100vw;
+}
+.blog__item {
+  background: $color-main;
+  color: $color-text;
+
+  &:not(:nth-of-type(1)) {
+    margin-top: (64/700)*100%;
+  }
+}
+.blog__button {
+  margin-left: auto;
+}
+
+.card {
+  align-items: center;
+  display: flex;
+  width: (700/1440)*100vw;
+  max-height: 20rem;
+  transition: all .3s ease 0s;
+
+  &:hover {
+    box-shadow: 4px 4px 8px rgba(26, 26, 26, .5);
+  }
+}
+.card__img {
+  aspect-ratio: 3/2;
+  width: (300/1440)*100vw;
+}
+.card__content {
+  padding: (20/700)*100% (20/700)*100% (12/700)*100%;
+  width: (400/1440)*100vw;
+}
+.card__meta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(1.4rem,(20/1440)*100vw,2.0rem);
+}
+.card__category {
+  background: $color-accent;
+  color: $color-main;
+  display: inline-block;
+  font-size: clamp(1.2rem,(14/1440)*100vw,1.4rem);
+  font-weight: 400;
+  padding: (5/360)*100% (14/360)*100%;
+  text-align: center;
+  border-radius: 1rem;
+  min-width: 10rem;
+}
+.card__date {
+  display: inline-block;
+  font-size: clamp(1.2rem,(14/1440)*100vw,1.4rem);
+}
+.card__head {
+  font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+  line-height: 1.5;
+  margin-top: (40/400)*100%;
+}
+.card__more {
+  border-top: 1px solid $color-titleBg1;
+  font-family: $font-en;
+  font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+  margin-top: (12/400)*100%;
+  text-align: right;
+  padding-top: (12/400)*100%;
+}

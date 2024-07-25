@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollTrigger: {
                 trigger: '.works',
                 start: 'center center',
-                end: () => `+=${listEl.scrollWidth - contentEl.clientWidth}`,
+                end: () => `+=${listEl.scrollWidth - contentEl.clientWidth + 700}`,
                 scrub: true,
                 pin: true,
                 anticipatePin: 1,
@@ -23,3 +23,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+
+
+const stalker = document.getElementById('stalker');
+
+//マウスに追従させる処理
+document.addEventListener('mousemove', function (e) {
+    stalker.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+});
+
+//リンクホバー時の処理
+const linkElement = document.querySelectorAll('a:not(.inactive)');
+for (let i = 0; i < linkElement.length; i++) {
+    //マウスホバー時
+    linkElement[i].addEventListener('mouseover', function (e) {
+        //マウスストーカーにクラスをつける
+        stalker.classList.add('mouseover');
+    });
+    
+    //マウスホバー解除時
+    linkElement[i].addEventListener('mouseout', function (e) {
+        stalker.classList.remove('mouseover');
+    });
+}

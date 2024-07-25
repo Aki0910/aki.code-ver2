@@ -1,0 +1,96 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# top-topics
+=============================================== */
+
+
+.topics {
+  color: $color-text;
+
+  .section__title {
+    color: $color-text;
+
+    &::after {
+      content: "Topics";
+      color: $color-titleBg1;
+    }
+}
+}
+.topics__inner {
+  margin-left: (200/1440)*100%;
+}
+.topics__title {
+}
+.topics__content {
+  margin-top: (120/1440)*100vw;
+}
+
+.topics__list {
+
+}
+.topics__item {
+  border-top: 1px solid $color-text;
+
+  width: (800/1440)*100vw;
+
+  &:last-of-type {
+    border-bottom: 1px solid $color-text;
+  }
+}
+.topics__anchor {
+  padding: (40/800)*100%  (20/800)*100%;
+  position: relative;
+  overflow: hidden;
+
+
+  &::before {
+    position: absolute;
+    content: '';
+    top:0;
+    left: 0;
+    background: $color-main;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateX(-100%);
+  }
+
+  &:hover {
+    &::before {
+      animation-name: changeBgColor;
+      animation-duration:.5s;
+      animation-fill-mode: forwards;
+      transform: translateX(-100%);
+    }
+  }
+}
+@keyframes changeBgColor {
+  0% {
+  transform: translate(-100%,0)
+  }
+  100% {
+  transform: translate(0,0)
+  }
+}
+
+.topics__wrap {
+  align-items: center;
+  display: flex;
+}
+.topics__date {
+  font-size: clamp(1.4rem,(20/1440)*100vw,2.0rem);
+}
+.topics__category {
+  color: $color-accent;
+  font-size: clamp(1.4rem,(20/1440)*100vw,2.0rem);
+  font-weight: 400;
+  margin-left: (40/760)*100%;
+}
+.topics__head {
+  font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
+  margin-top: (32/760)*100%;
+}
+.topics__button {
+  margin-left: auto;
+}
