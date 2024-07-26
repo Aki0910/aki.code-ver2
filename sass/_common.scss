@@ -60,6 +60,7 @@ img {
   object-fit: cover;
   vertical-align: middle;
   width: 100%;
+  height: auto;
 }
 
 .inner {
@@ -91,8 +92,10 @@ img {
 }
 
 .button {
-  width: 20rem;
-  height: 20rem;
+  width: (200/1440)*100vw;
+  min-width: 12rem;
+  min-height: 12rem;
+  height: (200/1440)*100vw;
   border-radius: 50%;
   border: 2px solid $color-accent;
   color: $color-accent;
@@ -109,11 +112,11 @@ img {
 }
 .button__img {
   margin: 0 auto ;
-  width: 6.4rem;
+  width: (64/1440)*100vw;
 }
 .button__text {
   font-family: $font-en;
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
   line-height: 1.5;
 }
 

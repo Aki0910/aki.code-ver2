@@ -6,8 +6,6 @@
 
 
 .blog {
-  margin-top: (200/1440)*100%;
-
   .section__title {
     color: $color-text;
 
@@ -30,6 +28,7 @@
 .blog__list {
   margin-left: auto;
   width: (700/1440)*100vw;
+  min-width: 60rem;
 }
 .blog__item {
   background: $color-main;
@@ -46,8 +45,6 @@
 .card {
   align-items: center;
   display: flex;
-  width: (700/1440)*100vw;
-  max-height: 20rem;
   transition: all .3s ease 0s;
 
   &:hover {
@@ -55,12 +52,12 @@
   }
 }
 .card__img {
-  aspect-ratio: 3/2;
   width: (300/1440)*100vw;
+  min-width: 25rem;
 }
 .card__content {
   padding: (20/700)*100% (20/700)*100% (12/700)*100%;
-  width: (400/1440)*100vw;
+  width: calc(100% - (300/1440)*100vw);
 }
 .card__meta {
   align-items: center;

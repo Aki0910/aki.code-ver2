@@ -1,0 +1,195 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# top-contact
+=============================================== */
+
+
+%reset-form {
+    appearance: none;
+    background: #fff;
+    border: 2px solid $color-primary;
+    border-radius: 5px;
+    box-shadow: none;
+    color: $color-text;
+    font-family: $font-ja;
+    font-size: clamp(16px,(20/1440)*100vw,20px);
+    min-height: 80px;
+    padding: (8/1000)*100%;
+
+    &:focus {
+        background: rgba(0, 104, 183, .1);
+    }
+
+    @include mq('sp') {
+        min-height: 40px;
+    }
+}
+.contact-form {
+  .section__title {
+    color: $color-text;
+
+    &::after {
+      content: "Contact";
+      color: $color-titleBg1;
+    }
+  }
+}
+.contact-form__inner {
+    max-width: 1000px;
+    
+    @include mq('sp') {
+        padding: (64/375)*100% 0;
+    }
+}
+.contact-form__title {
+    color: $color-primary;
+}
+
+.contact-form__wrap {
+    &:first-child {
+        margin-top: (80/1000)*100%;
+
+        @include mq('sp') {
+            margin-top: (64/335)*100%;
+        }
+    }
+    &:not(:first-child) {
+        margin-top: (40/1000)*100%;
+
+        @include mq('sp') {
+            margin-top: (24/335)*100%;
+        }
+    }
+}
+
+.contact-form__label {
+    color: $color-text;
+    font-size: clamp(24px,(32/1440)*100vw,32px);
+    width: fit-content;
+
+    &:not(:first-child) {
+        margin-top: 20px;
+    }
+}
+
+.contact-form__input {
+    margin: (16/480*100%) 0 0;
+
+    @include mq('sp') {
+        margin-top: (16/335)*100%;
+    }
+}
+
+[type="text"],
+[type="email"]{
+    @extend %reset-form;
+    width: (480/1440)*100vw;
+    min-width: 480px;
+
+    @include mq('sp') {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+textarea {
+    @extend %reset-form;
+    max-height: 300px;
+    resize: none;
+    width: 100%;
+
+    @include mq('sp') {
+        max-height: 252px;
+    }
+}
+
+[type="submit"] {
+    @extend %reset-form;
+    background: $color-primary;
+    color: $color-main;
+    display: inline-block;
+    text-align: center;
+    margin: (80/400)*100% auto 0;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+
+    &:hover {
+        background: $color-main;
+        color: $color-primary;
+        padding: 0;
+    }
+}
+
+.contact-form__button {
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    width: (400/1440) * 100vw;
+
+    @include mq('sp') {
+        width: 100%;
+    }
+}
+
+// contact form 7 デフォルトのスピナー非表示へ
+span.wpcf7-spinner {
+    display: none;
+}
+
+//デフォルトの送信メッセージ削除
+.wpcf7-response-output {
+    display: none;
+}
+//未入力の場合のテキストのマージン
+.wpcf7-not-valid-tip {
+    margin-top: (10/1000)*100%;
+    @include mq('sp') {
+        margin-top: (10/375)*100%;
+    }
+}
+
+.required {
+    position: relative;
+
+     &::after {
+        position: absolute;
+        content: "*";
+        top: 0%;
+        left: 105%;
+        transform: translateY(-50%);
+        color: $color-accent;
+        font-family: $font-en;
+
+        @include mq('sp') {
+            min-width: 56px;
+            right: -72px;
+        }
+     }
+}
+.contact__confirm {
+    color: $color-text;
+    font-family: $font-ja;
+    font-weight: 700;
+    font-size: clamp(16px,(24/1440)*100vw,24px);
+    margin-top: (64/1000)*100%;
+    text-align: center;
+}
+
+/*reCAPTCHAのロゴを非表示*/
+.grecaptcha-badge {
+	visibility: hidden; 
+}
+.googleRecaptcha {
+  color: $color-text;
+  font-family: $font-en;
+  font-size: clamp(8px,(16/1440)*100vw,16px);
+  margin-top: (8/1000)*100%;
+
+  @include mq('sp') {
+    margin-top: (8/335)*100%;
+  }
+}
+.googleRecaptcha__link {
+    display: inline-block;
+}

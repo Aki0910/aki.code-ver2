@@ -8,19 +8,32 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contentEl && listEl) {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(listEl, {
-            x: () => -(listEl.scrollWidth - contentEl.clientWidth),
-            ease: 'sine.inOut',
-            scrollTrigger: {
-                trigger: '.works',
-                start: 'center center',
-                end: () => `+=${listEl.scrollWidth - contentEl.clientWidth + 700}`,
-                scrub: true,
-                pin: true,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-            },
-        });
+        let xValue;
+        let shouldAnimate = true;
+
+        if (window.innerWidth >= 1440) {
+            xValue = () => -(listEl.scrollWidth - contentEl.clientWidth);
+        } else if (window.innerWidth < 1440 && window.innerWidth >= 768) {
+            xValue = () => -(listEl.scrollWidth * 1.2 - contentEl.clientWidth);
+        } else {
+            shouldAnimate = false;
+        }
+
+        if (shouldAnimate) {
+            gsap.to(listEl, {
+                x: xValue,
+                ease: 'sine.inOut',
+                scrollTrigger: {
+                    trigger: '.works',
+                    start: 'center center',
+                    end: () => `+=${listEl.scrollWidth - contentEl.clientWidth + 700}`,
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                },
+            });
+        }
     }
 });
 

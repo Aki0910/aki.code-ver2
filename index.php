@@ -223,7 +223,7 @@
                         <div class="card">
                             <div class="card__img">
                                 <?php if (has_post_thumbnail()) : ?>
-                                   <?php the_post_thumbnail('medium'); ?>
+                                   <?php the_post_thumbnail(); ?>
                                 <?php else: ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/代わりの画像までのパス" alt="">
                                 <?php endif; ?>
@@ -249,14 +249,25 @@
                 ?>
             </ul>
             <a class="button blog__button" href="">
-                    <div class="button__content">
-                        <div class="button__img">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">
-                        </div>
-                        <p class="button__text">VIEW ALL</p>
+                <div class="button__content">
+                    <div class="button__img">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">
                     </div>
-                </a>
+                    <p class="button__text">VIEW ALL</p>
+                </div>
+            </a>
         </div>
+    </div>
+</section>
+
+
+<section class="contact-form" id="contact-form">
+    <div class="inner">
+        <h2 class="section__title contact-form__title">お問い合わせ</h2>
+
+        <?php echo do_shortcode('[contact-form-7 id="f967d2e" title="お問い合わせ"]'); ?>
+        
+
     </div>
 </section>
 
