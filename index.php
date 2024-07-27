@@ -264,6 +264,10 @@
 <section class="contact-form" id="contact-form">
     <div class="inner">
         <h2 class="section__title contact-form__title">お問い合わせ</h2>
+        <div class="contact-form__info">
+            <p class="contact-form__text">仕事のご依頼はこちらで受け付けております。</p>
+            <p class="contact-form__text">料金や納期、その他ご相談やご質問などもお気軽にお問い合わせください。</p>
+        </div>
 
         <?php echo do_shortcode('[contact-form-7 id="f967d2e" title="お問い合わせ"]'); ?>
         
