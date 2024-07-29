@@ -26,6 +26,7 @@
 }
 .service__item {
     line-height: 1.5;
+    max-width: 48rem;
     width: (350/1440)*100vw;
 
     &:nth-child(even) {

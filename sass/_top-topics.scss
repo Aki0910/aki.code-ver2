@@ -31,7 +31,7 @@
 }
 .topics__item {
   border-top: 1px solid $color-text;
-
+  max-width: 90rem;
   width: (800/1440)*100vw;
 
   &:last-of-type {

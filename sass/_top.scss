@@ -5,18 +5,24 @@
 =============================================== */
 
 .top {
-    position: relative;
     height: (825/1440)*100vw;
+    position: relative;
+    max-height: 82.5rem;
+
 }
 .top__list {
 }
 .top__item {
+    box-shadow: 4px -4px 8px rgba(26, 26, 26, .3);
+    border-radius: 8px;
     position: absolute;
     top: (337/1440)*100vw;
     left: (925/1440)*100vw;
     transform: translate(-50%,-50%) rotate(45deg);
     filter: grayscale(90%);
     transition: all .3s ease 0s ;
+
+
     
     img {
         border-radius: 10px;
@@ -31,8 +37,10 @@
 }
 
 .top__item--large {
+    max-width: 30rem;
     width: (300/1440)*100vw;
 }
 .top__item--small {
+    max-width: 15rem;
     width: (150/1440)*100vw;
 }

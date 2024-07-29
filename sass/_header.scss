@@ -6,7 +6,9 @@
 
 .header {
     color: $color-text;
-    padding: (40/1440)*100% (80/1440)*100% ;
+    padding: (40/1440)*100% (80/1440)*100%;
+    max-width: 160rem;
+    margin: 0 auto ;
 }
 
 .header__inner {

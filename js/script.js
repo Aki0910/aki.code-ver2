@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const listEl = document.querySelector('.works__list');
     const worksSection = document.querySelector('.works');
 
+    gsap.registerPlugin(ScrollTrigger);
     if (contentEl && listEl) {
-        gsap.registerPlugin(ScrollTrigger);
 
         let xValue;
         let shouldAnimate = true;
@@ -35,6 +35,81 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+
+    function vw(v) {
+        const maxWidth = 1600;
+        const width = Math.min(window.innerWidth, maxWidth);
+        return (v / 100) * width;
+    }
+
+    window.addEventListener('load', function() {
+        const animations = [
+            { x: vw(-100 / 1440 * 100), y: vw(-50 / 1440 * 100), xDuration: .7, yDuration: .7 },  // 1番目の画像
+            { x: vw(-100 / 1440 * 100), y: vw(270 / 1440 * 100), xDuration: .7, yDuration: .7 },  // 2番目の画像
+            { x: vw(120 / 1440 * 100), y: vw(390 / 1440 * 100), xDuration: .7, yDuration: .7 },   // 3番目の画像
+            { x: vw(230 / 1440 * 100), y: vw(60 / 1440 * 100), xDuration: .7, yDuration: .7 }, // 4番目の画像
+            { x: vw(120 / 1440 * 100), y: vw(-160 / 1440 * 100), xDuration: .7, yDuration: .7 },  // 5番目の画像
+        ];
+
+        const items = document.querySelectorAll('.top__item');
+
+        // 各要素に対してアニメーションを設定
+        items.forEach((item, index) => {
+            // 新しいタイムラインを作成
+            const tl = gsap.timeline({
+                onComplete: function() {
+                    // アニメーションが終了してから0.5秒後にfilterを変更
+                    gsap.delayedCall(0.7, function() {
+                        gsap.to(item, { 
+                            filter: 'grayscale(0%)', 
+                            duration: 1.5 // 1.5秒かけてgrayscaleを0%にする
+                        });
+                    });
+                }
+            });
+            // x軸とy軸の移動を別々に設定
+            tl.fromTo(item, 
+                { 
+                    x: 0, 
+                    y: 0 
+                }, 
+                { 
+                    x: animations[index].x, 
+                    duration: animations[index].xDuration, 
+                    ease: "power2.out" 
+                }
+            )
+            .to(item, 
+                { 
+                    y: animations[index].y, 
+                    duration: animations[index].yDuration, 
+                    ease: "power2.out" 
+                }
+            );
+        });
+
+        // パララックス
+        // items.forEach((item, index) => {
+        //     const startY = animations[index].y;
+        //     const endY = startY + vw(100 / 1440 * 100);
+    
+        //     gsap.fromTo(item,
+        //         { y: startY }, 
+        //         {
+        //             y: endY, 
+        //             ease: "none",
+        //             scrollTrigger: {
+        //                 trigger: item,
+        //                 start: "top bottom", 
+        //                 end: "bottom top", 
+        //                 scrub: true, 
+        //                 markers: false 
+        //             }
+        //         }
+        //     );
+        // });
+    });
 });
 
 

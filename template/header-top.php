@@ -6,7 +6,7 @@
         <nav class="header__nav">
           <ul class="header__list">
             <li class="header__item"><a href="#works">Works</a></li>
-            <li class="header__item"><a href="#service">Blog</a></li>
+            <li class="header__item"><a href="#blog">Blog</a></li>
             <li class="header__item"><a href="#contact"><span class="header__contact">Contact<span></a></li>
           </ul>
         </nav>
