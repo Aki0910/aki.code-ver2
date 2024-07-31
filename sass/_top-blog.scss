@@ -46,9 +46,10 @@
   align-items: center;
   display: flex;
   transition: all .3s ease 0s;
+  box-shadow: 4px 4px 8px rgba(26, 26, 26, .5);
 
   &:hover {
-    box-shadow: 4px 4px 8px rgba(26, 26, 26, .5);
+    scale: 1.05;
   }
 }
 .card__img {

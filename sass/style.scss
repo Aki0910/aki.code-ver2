@@ -2,18 +2,22 @@
 @charset "uft-8";
 
 @use "foundation/index" as *;
-@use "common"; 
-@use "pagination"; 
-@use "header"; 
+@use "common";
+@use "common-pagenavi";
+@use "common-breadcrumb";
+@use "header";
+@use "header-works";
 @use "top";
 @use "top-profile";
 @use "top-works";
-@use "top-service"; 
+@use "top-service";
 @use "top-topics";
 @use "top-blog";
 @use "top-contact";
-@use "archive"; 
-@use "single"; 
-@use "contact-form";
-@use "footer"; 
+@use "archive";
+@use "archive-works";
+@use "single";
+@use "single-works";
+@use "footer";
+@use "footer-works";
 

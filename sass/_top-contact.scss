@@ -15,7 +15,7 @@
     font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
     letter-spacing: 0.1em;
     min-width: 40rem;
-    min-height: 80px;
+    min-height: 6.4rem;
     padding: (8/1000)*100%;
     width: 100%;
 
@@ -75,7 +75,7 @@
 
 textarea {
     @extend %reset-form;
-    max-height: 300px;
+    max-height: 20rem;
     resize: none;
     width: (600/1440)*100vw;
 }

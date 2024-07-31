@@ -1,38 +1,39 @@
 @use "foundation/index" as *;
 
 /* ===============================================
-# header
+# header-works
 =============================================== */
 
-.header {
-    color: $color-text;
+.header-works {
+    background: #3f3f3f;
+    color: $color-main;
     padding: (40/1440)*100% (80/1440)*100%;
 }
 
-.header__inner {
+.header-works__inner {
     align-items: center;
     display: flex;
     font-weight: 700;
     max-width: 128rem;
     margin: 0 auto ;
 }
-.header__logo {
+.header-works__logo {
     font-family: $font-en;
     font-size: 4rem;
     font-style: italic;
 }
-.header__nav {
+.header-works__nav {
     margin-left: auto;
 }
-.header__list {
+.header-works__list {
     align-items: center;
     display: flex;
     font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
 }
-.header__item {
+.header-works__item {
 
     margin-left: (80/1440)*100vw;
 }
-.header__contact {
+.header-works__contact {
     color: $color-accent;
 }

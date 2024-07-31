@@ -20,9 +20,15 @@
   </head>
   <body>
 
-  <?php if (is_home()) : ?>
-    <?php get_template_part('template/header-top'); ?>
-  <?php else : ?>
-     <?php get_template_part('template/header-under'); ?>
-  <?php endif; ?>
+  <?php
+// ページが archive-works.php または single-works.php かどうかを判定
+if (is_post_type_archive('works') || is_singular('works')) {
+    // archive-works.php または single-works.php の場合
+    get_template_part('template/header-works');
+} else {
+    // その他のページの場合
+    get_template_part('template/header-top');
+}
+?>
+
    

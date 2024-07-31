@@ -1,22 +1,22 @@
 <?php get_header(); ?>
-<div id="stalker"></div>
+<!-- <div id="stalker"></div> -->
 
 
 <section class="top">
     <ul class="top__list">
-        <li class="top__item top__item1 top__item--large">
+        <li class="top__item top__item--large">
             <img src="<?php echo esc_url(get_theme_file_uri('/img/top-aki.png')); ?>" alt="トップ画像">
         </li>
-        <li class="top__item top__item2 top__item--small">
+        <li class="top__item top__item--small">
             <img src="<?php echo esc_url(get_theme_file_uri('/img/top-book.png')); ?>" alt="トップ画像">
         </li>
-        <li class="top__item top__item3 top__item--large">
+        <li class="top__item top__item--large">
             <img src="<?php echo esc_url(get_theme_file_uri('/img/top-dive.png')); ?>" alt="トップ画像">
         </li>
-        <li class="top__item top__item4 top__item--large">
+        <li class="top__item top__item--large">
             <img src="<?php echo esc_url(get_theme_file_uri('/img/top-pc.png')); ?>" alt="トップ画像">
         </li>
-        <li class="top__item top__item5 top__item--small">
+        <li class="top__item top__item--small">
             <img src="<?php echo esc_url(get_theme_file_uri('/img/top-travel.png')); ?>" alt="トップ画像">
         </li>
     </ul>
@@ -34,12 +34,11 @@
             <dd class="profile__desxcription">
                 <p>当サイトをご覧いただき、ありがとうございます。</p>
                 <p>東京都出身、薬科大学を卒業後、薬剤師として従事。</p>
-                <p>元々ダイビングや海外旅行が好き（バックパッカー歴もあり）だったため、</p>
-                <p>フルリモートでできる仕事を探していたところWeb制作に出会い学習を開始。</p>
+                <p>薬剤師として働きながら、Web制作に興味を持ち学習を開始。</p>
                 <p>０から作り上げるやりがいと、新しい知識を身につけることの楽しさから</p>
                 <p>見事コーディングにハマり、web制作へのめり込むように。</p>
-                <p>現在は2社と業務契約を締結、ホームページ制作と教材作成のチーム開発に従事。</p>
-                <p>主な業務は、企業サイト制作（デザイン / コーディング）、wordpress構築、保守・管理です。</p>
+                <p>現在はフリーランスとして2社と業務委託契約を締結、</p>
+                <p>ホームページ制作と教材作成のチーム開発に従事。</p>
             </dd>
         </dl>
         <ul class="sns__list">
@@ -80,7 +79,7 @@
                         $obj = get_post_type_object($post->post_type); 
                 ?>
                 <li class="works__item">
-                    <a href="">
+                    <a href="<?php the_permalink(); ?>">
                         <div class="works__img">
                             <?php $pic = get_field('picture1'); if( !empty($pic) ): ?>
                                 <img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>" />
@@ -95,10 +94,10 @@
                     wp_reset_postdata();
                 ?>
 
-                <a class="button works__button" href="">
+                <a class="button works__button" href="<?php echo esc_url(home_url('/works/')); ?>">
                     <div class="button__content">
                         <div class="button__img">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-white.png')); ?>" alt="">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-white.png')); ?>" alt="実績一覧を見る">
                         </div>
                         <p class="button__text">VIEW ALL</p>
                     </div>
@@ -193,7 +192,7 @@
                     wp_reset_postdata();
                 ?>
             </ul>
-            <a class="button topics__button" href="">
+            <a class="button topics__button" href="<?php echo esc_url(home_url('/topics/')); ?>">
                     <div class="button__content">
                         <div class="button__img">
                             <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">

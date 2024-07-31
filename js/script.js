@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const worksSection = document.querySelector('.works');
 
     gsap.registerPlugin(ScrollTrigger);
+    
     if (contentEl && listEl) {
 
         let xValue;
@@ -37,103 +38,137 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    function vw(v) {
-        const maxWidth = 1600;
-        const width = Math.min(window.innerWidth, maxWidth);
-        return (v / 100) * width;
-    }
 
     window.addEventListener('load', function() {
-        const animations = [
-            { x: vw(-100 / 1440 * 100), y: vw(-50 / 1440 * 100), xDuration: .7, yDuration: .7 },  // 1番目の画像
-            { x: vw(-100 / 1440 * 100), y: vw(270 / 1440 * 100), xDuration: .7, yDuration: .7 },  // 2番目の画像
-            { x: vw(120 / 1440 * 100), y: vw(390 / 1440 * 100), xDuration: .7, yDuration: .7 },   // 3番目の画像
-            { x: vw(230 / 1440 * 100), y: vw(60 / 1440 * 100), xDuration: .7, yDuration: .7 }, // 4番目の画像
-            { x: vw(120 / 1440 * 100), y: vw(-160 / 1440 * 100), xDuration: .7, yDuration: .7 },  // 5番目の画像
-        ];
 
-        const items = document.querySelectorAll('.top__item');
+    // 各画像の移動先位置を指定
+    const targetPositions = [
+        { top: '30%', left: '60%' }, // 1番目の画像
+        { top: '70%', left: '60%' }, // 2番目の画像
+        { top: '85%', left: '77%' }, // 3番目の画像
+        { top: '43%', left: '85%' }, // 4番目の画像
+        { top: '15%', left: '76%' },  // 5番目の画像
+        { top: '56%', left: '63%' }  // 5番目の画像
+    ];
 
-        // 各要素に対してアニメーションを設定
-        items.forEach((item, index) => {
-            // 新しいタイムラインを作成
-            const tl = gsap.timeline({
-                onComplete: function() {
-                    // アニメーションが終了してから0.5秒後にfilterを変更
-                    gsap.delayedCall(0.7, function() {
-                        gsap.to(item, { 
-                            filter: 'grayscale(0%)', 
-                            duration: 1.5 // 1.5秒かけてgrayscaleを0%にする
-                        });
-                    });
-                }
-            });
-            // x軸とy軸の移動を別々に設定
-            tl.fromTo(item, 
-                { 
-                    x: 0, 
-                    y: 0 
-                }, 
-                { 
-                    x: animations[index].x, 
-                    duration: animations[index].xDuration, 
-                    ease: "power2.out" 
-                }
-            )
-            .to(item, 
-                { 
-                    y: animations[index].y, 
-                    duration: animations[index].yDuration, 
-                    ease: "power2.out" 
-                }
-            );
+    // アニメーションを設定する要素を選択
+    const items = document.querySelectorAll('.top__item');
+
+
+
+    // GSAPタイムライン
+    items.forEach((item, index) => {
+        // 新しいタイムラインを作成
+        const tl = gsap.timeline({
+            delay: 0.5 // ページ読み込み後の待機時間
         });
 
-        // パララックス
-        // items.forEach((item, index) => {
-        //     const startY = animations[index].y;
-        //     const endY = startY + vw(100 / 1440 * 100);
-    
-        //     gsap.fromTo(item,
-        //         { y: startY }, 
-        //         {
-        //             y: endY, 
-        //             ease: "none",
-        //             scrollTrigger: {
-        //                 trigger: item,
-        //                 start: "top bottom", 
-        //                 end: "bottom top", 
-        //                 scrub: true, 
-        //                 markers: false 
-        //             }
-        //         }
-        //     );
-        // });
+        // topとleftの移動を設定
+        tl.to(item, {
+            top: targetPositions[index].top,
+            left: targetPositions[index].left,
+            duration: 1.0, // アニメーションの持続時間
+            ease: "power2.out"
+        })
+        .call(() => {
+            // アニメーション終了後0.5秒後にgrayscaleを解除
+            gsap.delayedCall(0.5, () => {
+                item.style.filter = 'grayscale(0%)';
+            });
+        });
+    });
+
+    // スクロールに合わせてパララックスを適用
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        items.forEach(item => {
+            const speed = 0.2; // パララックスの速度
+            const offset = scrollY * speed;
+            item.style.transform = `translate(-50%, calc(-50% + ${offset}px)) rotate(45deg)`;
+        });
+    });
+
+
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slider__img');
+    const navDots = document.querySelectorAll('.slider__nav-dot');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let interval;
+    let isAnimating = false;
 
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                gsap.to(slide, { opacity: 1, duration: 1, ease: 'power1.inOut' });
+                slide.classList.add('active');
+            } else {
+                gsap.to(slide, { opacity: 0, duration: 1, ease: 'power1.inOut' });
+                slide.classList.remove('active');
+            }
+        });
 
+        navDots.forEach((dot, i) => {
+            if (i === index) {
+                gsap.to(dot, {
+                    opacity: 1,
+                    backgroundColor: '#0068b7', // アクティブな色
+                    scale: 1.2, // 少し大きくする
+                    duration: 1,
+                    ease: 'power1.inOut'
+                });
+            } else {
+                gsap.to(dot, {
+                    opacity: 0.5,
+                    backgroundColor: '#fff', // デフォルトの色
+                    scale: 1,
+                    duration: 1,
+                    ease: 'power1.inOut'
+                });
+            }
+        });
+    }
 
+    function nextSlide() {
+        if (!isAnimating) {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+    }
 
-const stalker = document.getElementById('stalker');
+    function startSlider() {
+        interval = setInterval(nextSlide, 3000); // スライドを3秒ごとに切り替え
+    }
 
-//マウスに追従させる処理
-document.addEventListener('mousemove', function (e) {
-    stalker.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+    function stopSlider() {
+        clearInterval(interval); // スライダーの自動切り替えを停止
+    }
+
+    function resumeSlider() {
+        startSlider(); // 自動切り替えを再開
+    }
+
+    // 初期スライドとナビゲーションを表示
+    showSlide(currentIndex);
+    startSlider(); // スライダーの自動切り替えを開始
+
+    // ナビゲーションボタンのクリックイベント
+    navDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            stopSlider(); // スライダーの自動切り替えを停止
+
+            const index = parseInt(dot.getAttribute('data-index'));
+            currentIndex = index;
+            showSlide(currentIndex);
+
+            // クリック後に2秒間の停止を行い、その後にスライダーの自動切り替えを再開
+            setTimeout(() => {
+                resumeSlider(); // 自動切り替えを再開
+            }, 2000); // 2秒間の停止
+        });
+    });
+
 });
-
-//リンクホバー時の処理
-const linkElement = document.querySelectorAll('a:not(.inactive)');
-for (let i = 0; i < linkElement.length; i++) {
-    //マウスホバー時
-    linkElement[i].addEventListener('mouseover', function (e) {
-        //マウスストーカーにクラスをつける
-        stalker.classList.add('mouseover');
-    });
-    
-    //マウスホバー解除時
-    linkElement[i].addEventListener('mouseout', function (e) {
-        stalker.classList.remove('mouseover');
-    });
-}

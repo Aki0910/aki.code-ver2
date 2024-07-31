@@ -1,53 +1,52 @@
 @use "foundation/index" as *;
 
 /* ===============================================
-# footer
+# footer-works
 =============================================== */
 
-.footer {
+.footer-works {
     background: linear-gradient(to bottom,#3F3F3F, #1A1A1A);
     color: $color-main;
-    margin-top: (200/1440)*100%;
 }
-.footer__inner {
+.footer-works__inner {
     margin: 0 auto;
     max-width: 144rem;
     padding: (80/1440)*100% 0 (40/1440)*100%;
     width: (1040/1440)*100vw;
 }
-.footer__content {
+.footer-works__content {
     align-items: start;
     display: flex;
     font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
 }
-.footer__left {
+.footer-works__left {
     width: 50%;
 }
-.footer__logo {
+.footer-works__logo {
     font-family: $font-en;
     font-style: italic;
 }
-.footer__textbox {
+.footer-works__textbox {
     margin-top: (80/420)*100%;
     line-height: 1.5;
 }
-.footer__text {
+.footer-works__text {
     font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
 }
-.footer__right {
+.footer-works__right {
     font-family: $font-en;
     width: 50%;
 }
-.footer__list {
+.footer-works__list {
 }
-.footer__item {
+.footer-works__item {
     width: fit-content;
-    
+
     &:not(:nth-of-type(1)) {
         margin-top: (80/520)*100%;
     }
 }
-.footer__copyright {
+.footer-works__copyright {
     display: block;
     margin-top: (200/1440)*100%;
     text-align: center;

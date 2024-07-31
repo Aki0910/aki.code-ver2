@@ -13,22 +13,18 @@
 .top__list {
 }
 .top__item {
-    box-shadow: 4px -4px 8px rgba(26, 26, 26, .3);
+    box-shadow: 4px -4px 8px rgba(26, 26, 26, .5);
     border-radius: 8px;
     position: absolute;
-    top: (337/1440)*100vw;
-    left: (925/1440)*100vw;
-    transform: translate(-50%,-50%) rotate(45deg);
+    top: 25%;  /* 初期位置 */
+    left: 65%; /* 初期位置 */
+    transform: translate(-50%, -50%) rotate(45deg);
     filter: grayscale(90%);
-    transition: all .3s ease 0s ;
+    transition: filter 0.3s ease;
+    overflow: hidden;
 
-
-    
     img {
         border-radius: 10px;
-    }
-    &:hover {
-        filter: grayscale(0%);
     }
 
     &:nth-child(1) {

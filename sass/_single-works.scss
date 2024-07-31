@@ -1,0 +1,99 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# single-works
+=============================================== */
+
+
+
+.single-works {
+    background: #3f3f3f;
+  
+    .section__title {
+      color: $color-main;
+  
+      &::after {
+        content: "Works";
+        color: $color-titleBg2;
+        }
+    }
+}
+.single-works__inner {
+    margin: 0 auto ;
+    max-width: 144rem;
+    padding: (216/1440)*100% 0 (120/1440)*100%;
+    width: (1040/1440)*100vw;
+}
+.single-works__content {
+    color: $color-main;
+    margin: 0 auto ;
+    width: (900/1440)*100vw;
+}
+.single-works__company {
+    font-size: clamp(2.4rem,(32/1440)*100vw,3.2rem);
+    margin-top: (40/480)*100%;
+}
+.single-works__role {
+    font-size: clamp(1.8rem,(24/1440)*100vw,2.4rem);
+    margin-top: (40/900)*100%;
+}
+.single-works__details {
+    font-size: clamp(1.8rem,(20/1440)*100vw,2.0rem);
+    margin-top: (40/900)*100%;
+    line-height: 1.5;
+}
+.single-works__button {
+    border: 2px solid $color-main;
+    color: $color-main;
+    margin: (80/900)*100% 0 0 auto;
+}
+
+
+.slider {
+    height: (400/1440)*100vw;
+    margin-top: (80/900)*100%;
+    position: relative;
+}
+.slider__wrapper {
+    position: relative;
+    width: (600/1440)*100vw;
+    height: 100%;
+    margin: 0 auto ;
+}
+.slider__img {
+    position: absolute;
+    width: (600/1440)*100vw;
+    aspect-ratio: 3/2;
+    max-width: 90rem;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.slider__navigation {
+    position: absolute;
+    right: (80/900)*100%;
+    transform: translateX(-50%);
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.slider__nav-dot {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    opacity: 0;
+
+    &.active {
+        background: #0068b7;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,51 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# pagenavi
+=============================================== */
+
+.wp-pagenavi {
+	margin: (120/1040)*100% auto;
+    font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #77a0d1;
+}
+.wp-pagenavi a {
+    color: $color-main;
+}
+.wp-pagenavi span.current,
+.wp-pagenavi a.page {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+    border: solid 1px $color-main;
+	border-radius: 50%;
+	text-align: center;
+	transition: all .3s ease 0s;
+    margin: 0 (20/1040)*100% ;
+	width: 4rem;
+	height: 4rem;
+}
+.wp-pagenavi span.current {
+    border: none;
+    background: $color-accent;
+    color: $color-main;
+}
+.wp-pagenavi a.page {
+	background: none;
+}
+.wp-pagenavi a.page:hover {
+    background: $color-accent;
+    color: $color-main;
+}
+// .wp-pagenavi .first,
+// .wp-pagenavi .extend {
+//     margin-right: 10px;
+// }
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink {
+    display: none;
+}

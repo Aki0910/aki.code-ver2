@@ -1,0 +1,30 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# breadcrumb
+=============================================== */
+
+.breadcrumb {
+    border-bottom: 1px solid $color-text;
+    color: $color-text;
+    margin-top: (40/1040)*100%;
+    letter-spacing: 0.1em;
+    width: fit-content;
+}
+.breadcrumb-works {
+    border-bottom: 1px solid $color-main;
+    color: $color-main;
+    margin-top: (40/1040)*100%;
+    letter-spacing: 0.1em;
+    width: fit-content;
+}
+.breadcrumb__inner {
+    align-items: center;
+    display: flex;
+    font-size: clamp(1.4rem,(20/1440)*100vw,2.0rem);
+}
+
+//管理画面上のパンくずの区切り
+.breadcrumb__space {
+    margin: 0 (10/1440)*100vw ;
+}

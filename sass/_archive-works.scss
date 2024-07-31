@@ -1,0 +1,75 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# archive-works
+=============================================== */
+
+
+.archive-works {
+  background: #3f3f3f;
+
+  .section__title {
+    color: $color-main;
+
+    &::after {
+      content: "Works";
+      color: $color-titleBg2;
+    }
+}
+}
+.archive-works__inner {
+  margin: 0 auto ;
+  max-width: 144rem;
+  padding: (216/1440)*100% 0 (120/1440)*100%;
+  width: (1040/1440)*100vw;
+}
+
+.archive-works__content {
+  width: 100%;
+  margin-top: (80/1440)*100vw;
+
+}
+
+.archive-works__list {
+
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.archive-works__item {
+  color: $color-main;
+  width: (480/1440)*100vw;
+  
+  &:nth-child(2n){
+    margin-left: (80/1040)*100%;
+  }
+  &:nth-child(n + 3){
+    margin-top: (120/1040)*100%;
+  }
+}
+.archive-works__img {
+  overflow: hidden;
+  scale: 1;
+
+  img {
+    transition: all .5s ease 0s;
+  }
+  
+  img:hover {
+    transition: all .5s ease 0s;
+    scale: 1.05;
+  }
+}
+.archive-works__company {
+  font-size: clamp(1.8rem,(24/1440)*100vw,2.4rem);
+  margin-top: (40/480)*100%;
+}
+.archive-works__role {
+  font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+  margin-top: (24/480)*100%;
+}
+.archive-works__button {
+  border: 2px solid $color-main;
+  color: $color-main;
+  margin: 0 0 0 (120/1440)*100vw;
+}
