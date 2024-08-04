@@ -28,21 +28,19 @@
                     <?php while (have_posts()) : the_post(); ?>
 
                 <li class="topics__item">
-                    <a class="topics__anchor" href="<?php the_permalink(); ?>">
-                        <div class="topics__wrap">
-                            <div class="topics__date"><?php echo get_the_date(); ?></div>
-                            <p class="topics__category">
-                                <?php
-                                    if ($terms = get_the_terms($post->ID, 'info')) {
-                                    foreach ( $terms as $term ) {
-                                    echo esc_html($term->name);
-                                    }
-                                    }
-                                ?>
-                            </p>
-                        </div>
-                        <h3 class="topics__head"><?php the_title(); ?></h3>
-                    </a>
+                    <div class="topics__wrap">
+                        <div class="topics__date"><?php echo get_the_date(); ?></div>
+                        <p class="topics__category">
+                            <?php
+                                if ($terms = get_the_terms($post->ID, 'info')) {
+                                foreach ( $terms as $term ) {
+                                echo esc_html($term->name);
+                                }
+                                }
+                            ?>
+                        </p>
+                    </div>
+                    <h3 class="topics__head"><?php the_title(); ?></h3>
                 </li>
                 <?php endwhile; ?>
                 <?php endif; ?>

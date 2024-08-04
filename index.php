@@ -117,8 +117,7 @@
                     <h3 class="service__head">デザイン</h3>
                     <p class="service__description">
                     ホームページのデザイン作成をいたします。
-                    まずは、ヒアリングにてご希望のデザインや
-                    サイトの方向性を決め、課題解決に努めます。
+                    まずは、ヒアリングにてご希望のデザインやサイトの方向性を決め、課題解決に努めます。
                     一方通行にならないよう、一緒に作り上げていきましょう。
                     </p>
                 </li>
@@ -126,8 +125,7 @@
                     <div class="service__number">02</div>
                     <h3 class="service__head">Webサイト制作</h3>
                     <p class="service__description">
-                    デザインを元にHTML / CSS / Java Scriptを
-                    使用したホームページ / ランディングページを作成いたします。
+                    デザインを元にHTML / CSS / Java Scriptを使用したホームページ / ランディングページを作成いたします。
                     SEO対策やレスポンシブに優れたサイトを作成いたします。
                     作成後の管理も考えた丁寧なコーディングを心がけております。
                     </p>
@@ -171,21 +169,19 @@
                         $obj = get_post_type_object($post->post_type); 
                 ?>
                 <li class="topics__item">
-                    <a class="topics__anchor" href="<?php the_permalink(); ?>">
-                        <div class="topics__wrap">
-                            <div class="topics__date"><?php echo get_the_date(); ?></div>
-                            <p class="topics__category">
-                                <?php
-                                    if ($terms = get_the_terms($post->ID, 'info')) {
-                                    foreach ( $terms as $term ) {
-                                    echo esc_html($term->name);
-                                    }
-                                    }
-                                ?>
-                            </p>
-                        </div>
-                        <h3 class="topics__head"><?php the_title(); ?></h3>
-                    </a>
+                    <div class="topics__wrap">
+                        <div class="topics__date"><?php echo get_the_date(); ?></div>
+                        <p class="topics__category">
+                            <?php
+                                if ($terms = get_the_terms($post->ID, 'info')) {
+                                foreach ( $terms as $term ) {
+                                echo esc_html($term->name);
+                                }
+                                }
+                            ?>
+                        </p>
+                    </div>
+                    <h3 class="topics__head"><?php the_title(); ?></h3>
                 </li>
                 <?php endwhile;
                     endif;
@@ -227,7 +223,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                    <?php the_post_thumbnail(); ?>
                                 <?php else: ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/代わりの画像までのパス" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/noimage.jpg" alt="画像準備中">
                                 <?php endif; ?>
                             </div>
                             <div class="card__content">
@@ -250,7 +246,7 @@
                     wp_reset_postdata();
                 ?>
             </ul>
-            <a class="button blog__button" href="">
+            <a class="button blog__button" href="<?php echo esc_url(home_url('/post/')); ?>">
                 <div class="button__content">
                     <div class="button__img">
                         <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">

@@ -33,9 +33,14 @@
 .blog__item {
   background: $color-main;
   color: $color-text;
+  transition: all .3s ease 0s;
 
   &:not(:nth-of-type(1)) {
     margin-top: (64/700)*100%;
+  }
+
+  &:hover {
+    scale: 1.05;
   }
 }
 .blog__button {
@@ -45,12 +50,7 @@
 .card {
   align-items: center;
   display: flex;
-  transition: all .3s ease 0s;
   box-shadow: 4px 4px 8px rgba(26, 26, 26, .5);
-
-  &:hover {
-    scale: 1.05;
-  }
 }
 .card__img {
   width: (300/1440)*100vw;

@@ -17,11 +17,10 @@
                     <?php if (has_post_thumbnail() ) : ?>
                         <?php the_post_thumbnail('full',array('class' => 'main__card--img')); ?>
                     <?php endif; ?>
-                    <?php
-                    $content_string = get_the_content();
-                    $content_string = str_replace('<p','<p class="main__card--content" ',$content_string);                        
-                    echo $content_string;
-                    ?>
+                    <div class="main__card--content">
+                    <?php echo get_the_content(); ?>
+
+                   </div>        
                 </article>
                 <?php endwhile; ?>
             <?php

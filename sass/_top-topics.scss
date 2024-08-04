@@ -33,12 +33,6 @@
   border-top: 1px solid $color-text;
   max-width: 90rem;
   width: (800/1440)*100vw;
-
-  &:last-of-type {
-    border-bottom: 1px solid $color-text;
-  }
-}
-.topics__anchor {
   padding: (40/800)*100%  (20/800)*100%;
   position: relative;
   overflow: hidden;
@@ -58,14 +52,16 @@
 
   &:hover {
     &::before {
-      animation-name: changeBgColor;
-      animation-duration:.7s;
-      animation-fill-mode: forwards;
-      animation-timing-function: ease-in-out;
+      animation: changeBgColor .7s forwards ease-in-out;
       transform: translateX(-100%);
     }
   }
+
+  &:last-of-type {
+    border-bottom: 1px solid $color-text;
+  }
 }
+
 @keyframes changeBgColor {
   0% {
   transform: translate(-100%,0)
