@@ -40,7 +40,8 @@
   }
 
   &:hover {
-    scale: 1.05;
+    box-shadow: 4px 4px 8px rgba(26, 26, 26, .5);
+    transform: translate(-4px,-4px);
   }
 }
 .blog__button {
@@ -50,7 +51,7 @@
 .card {
   align-items: center;
   display: flex;
-  box-shadow: 4px 4px 8px rgba(26, 26, 26, .5);
+  border: 1px solid rgba(26, 26, 26, .3);
 }
 .card__img {
   width: (300/1440)*100vw;
@@ -68,13 +69,14 @@
 }
 .card__category {
   background: $color-accent;
+  border-radius: 2rem;
   color: $color-main;
   display: inline-block;
   font-size: clamp(1.2rem,(14/1440)*100vw,1.4rem);
   font-weight: 400;
+  letter-spacing: 0.1em;
   padding: (5/360)*100% (14/360)*100%;
   text-align: center;
-  border-radius: 1rem;
   min-width: 10rem;
 }
 .card__date {

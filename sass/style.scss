@@ -3,6 +3,7 @@
 
 @use "foundation/index" as *;
 @use "common";
+@use "common-customCss";
 @use "common-pagenavi";
 @use "common-breadcrumb";
 @use "header";
@@ -16,7 +17,7 @@
 @use "top-contact";
 @use "archive";
 @use "archive-works";
-@use "single";
+@use "single-post";
 @use "single-works";
 @use "footer";
 @use "footer-works";

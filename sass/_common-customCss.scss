@@ -1,0 +1,106 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# custom css
+=============================================== */
+
+%my-class-base {
+    font-size: clamp(1.6rem,(20/1440)*100vw,2rem);
+}
+.my-class__paragraph {
+    @extend %my-class-base;
+    margin: (40/720)*100% auto;
+}
+.my-class__heading1 {
+
+}
+.my-class__heading2 {
+
+}
+.my-class__heading3 {
+    font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
+    margin: (40/720)*100% 0;
+    padding-left: 4rem;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 2rem;
+        height: 6rem;
+        background: $color-accent;
+        top: 50%;
+        left: 0;
+        transform: translatey(-50%);
+    }
+}
+.my-class__heading4 {
+    font-size: clamp(2.4rem,(3/1440)*100vw,3rem);
+    margin: (40/720)*100% 0;
+    padding-left: 4rem;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 2.4rem;
+        height: 2.4rem;
+        background: $color-accent;
+        border-radius: 50%;
+        top: 50%;
+        left: 0;
+        transform: translatey(-50%);
+    }
+
+}
+.my-class__heading5 {
+
+}
+.my-class__heading6 {
+
+}
+.my-class__unorderdList {
+    @extend %my-class-base;
+    border: 3px dotted rgba(0, 104, 183, .3);
+    margin: (40/720)*100% auto;
+    padding: (20/720)*100%;
+    width: 80%;
+}
+.my-class__listItem {
+    line-height: 2;
+
+    &:not(:nth-child(1)) {
+        margin: (20/576)*100% auto 0;
+    }
+
+}
+.my-class__blockquote {
+
+}
+.my-class__table {
+
+}
+.my-class__table-head {
+
+}
+.my-class__table-body {
+
+}
+.my-class__table-row {
+
+}
+.my-class__table-header {
+
+}
+.my-class__table-data {
+
+}
+.my-class__button {
+
+}
+.my-class__code {
+
+}
+.my-class__pre {
+
+}

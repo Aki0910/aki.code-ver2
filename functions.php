@@ -91,4 +91,65 @@ function search_filter($query) {
 }
 add_filter('pre_get_posts','search_filter');
 
+
+
+/**
+ * クラス名付与
+ */
+function add_custom_classes_to_content($content) {
+    $dom = new DOMDocument();
+    libxml_use_internal_errors(true); // HTMLエラーを無視する
+    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    libxml_clear_errors();
+    
+    $xpath = new DOMXPath($dom);
+    
+    // 各タグに追加するクラス名
+    $tags = array(
+        'p' => 'my-class__paragraph',
+        'h1' => 'my-class__heading1',
+        'h2' => 'my-class__heading2',
+        'h3' => 'my-class__heading3',
+        'h4' => 'my-class__heading4',
+        'h5' => 'my-class__heading5',
+        'h6' => 'my-class__heading6',
+        'ul' => 'my-class__unorderdList',
+        'ol' => 'my-class__orderdList',
+        'li' => 'my-class__listItem',
+        'blockquote' => 'my-class__blockquote',
+        'table' => 'my-class__table',
+        'thead' => 'my-class__tableHead',
+        'tbody' => 'my-class__tableBody',
+        'tr' => 'my-class__tableRow',
+        'th' => 'my-class__tableHeader',
+        'td' => 'my-class__tableData',
+        'form' => 'my-class__form',
+        'input' => 'my-class__input',
+        'textarea' => 'my-class__textarea',
+        'button' => 'my-class__button',
+        'label' => 'my-class__label',
+        'code' => 'my-class__code',
+        'pre' => 'my-class__pre'
+    );
+    
+    foreach ($tags as $tag => $class) {
+        $elements = $xpath->query("//{$tag}");
+        foreach ($elements as $element) {
+            $existing_class = $element->getAttribute('class');
+            $new_class = $existing_class ? $existing_class . ' ' . $class : $class;
+            $element->setAttribute('class', $new_class);
+        }
+    }
+
+    return $dom->saveHTML();
+}
+
+add_filter('the_content', 'add_custom_classes_to_content');
+
+
+
+
+
+
 ?>
+

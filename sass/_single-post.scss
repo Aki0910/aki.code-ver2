@@ -1,0 +1,65 @@
+@use "foundation/index" as *;
+
+.container {
+    align-items: start;
+    display: flex;
+    justify-content: space-between;
+    margin: (120/1440)*100% (80/1440)*100%;
+}
+.main {
+    background: $color-main;
+    padding: (176/1280)*100% (40/1280)*100% ;
+    width: (800/1440)*100vw;
+}
+.main__card {
+
+    .section__title {
+        color: $color-text;
+    
+        &::after {
+          content: "Blog";
+          color: $color-titleBg1;
+          }
+      }
+    .breadcrumb {
+        margin-top: (40/720)*100%;
+    }
+}
+.main__cardTitle {
+    margin-top: (80/720)*100%;
+}
+.main__cardSubtitle {
+    border-bottom: 4px solid $color-accent;
+    font-size: clamp(2.4rem,(32/1440)*100vw,3.2rem);
+    margin: (40/720)*100% 0;
+    padding: (10/720)*100% 0;
+}
+.main__card--title {
+    font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
+}
+.main__card--meta {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: (80/720)*100%;
+}
+.main__card--date {
+    font-size: clamp(1.2rem,(14/1440)*100vw,1.4rem);
+}
+.main__content {
+    margin-top: (40/720)*100%;
+}
+.main__reration {
+    margin-top: (80/720)*100%;
+}
+.main__popular {
+    margin-top: (80/720)*100%;
+}
+
+
+
+
+.aside {
+    background: $color-main;
+    width: (360/1440)*100vw;
+}
