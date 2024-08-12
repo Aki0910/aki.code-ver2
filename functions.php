@@ -113,6 +113,7 @@ function add_custom_classes_to_content($content) {
         'h4' => 'my-class__heading4',
         'h5' => 'my-class__heading5',
         'h6' => 'my-class__heading6',
+        'figure' => 'my-class__figure',
         'ul' => 'my-class__unorderdList',
         'ol' => 'my-class__orderdList',
         'li' => 'my-class__listItem',

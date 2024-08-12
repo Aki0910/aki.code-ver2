@@ -36,6 +36,7 @@
 }
 .main__card--title {
     font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
+    line-height: 1.5;
 }
 .main__card--meta {
     align-items: center;

@@ -5,11 +5,12 @@
 =============================================== */
 
 %my-class-base {
-    font-size: clamp(1.6rem,(20/1440)*100vw,2rem);
+    font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
 }
 .my-class__paragraph {
     @extend %my-class-base;
-    margin: (40/720)*100% auto;
+    // margin: (64/720)*100% auto;
+    line-height: 2;
 }
 .my-class__heading1 {
 
@@ -18,8 +19,9 @@
 
 }
 .my-class__heading3 {
-    font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
-    margin: (40/720)*100% 0;
+    font-size: clamp(2.8rem,(36/1440)*100vw,3.6rem);
+    margin: (80/720)*100% 0;
+    line-height: 1.5;
     padding-left: 4rem;
     position: relative;
 
@@ -27,7 +29,7 @@
         position: absolute;
         content: "";
         width: 2rem;
-        height: 6rem;
+        height: 100%;
         background: $color-accent;
         top: 50%;
         left: 0;
@@ -35,8 +37,9 @@
     }
 }
 .my-class__heading4 {
-    font-size: clamp(2.4rem,(3/1440)*100vw,3rem);
-    margin: (40/720)*100% 0;
+    font-size: clamp(2.0rem,(28/1440)*100vw,2.8rem);
+    margin: (80/720)*100% 0;
+    line-height: 1.5;
     padding-left: 4rem;
     position: relative;
 
@@ -54,25 +57,26 @@
 
 }
 .my-class__heading5 {
-
+    font-size: clamp(1.2rem,(20/1440)*100vw,2rem);
+    margin: (40/720)*100% 0;
 }
 .my-class__heading6 {
 
 }
+.my-class__figure {
+    display: block;
+    margin: (40/720)*100% auto;
+}
 .my-class__unorderdList {
     @extend %my-class-base;
     border: 3px dotted rgba(0, 104, 183, .3);
-    margin: (40/720)*100% auto;
-    padding: (20/720)*100%;
+    margin: (80/720)*100% auto;
+    padding: (20/720)*100% (20/720)*100% (20/720)*100% (40/720)*100%;
     width: 80%;
 }
 .my-class__listItem {
+    list-style: disc;
     line-height: 2;
-
-    &:not(:nth-child(1)) {
-        margin: (20/576)*100% auto 0;
-    }
-
 }
 .my-class__blockquote {
 

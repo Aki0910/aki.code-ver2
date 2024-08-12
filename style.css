@@ -477,16 +477,17 @@ img {
 # custom css
 =============================================== */
 .my-class__unorderdList, .my-class__paragraph {
-  font-size: clamp(1.6rem, 1.3888888889vw, 2rem);
+  font-size: clamp(1rem, 1.1111111111vw, 1.6rem);
 }
 
 .my-class__paragraph {
-  margin: 5.5555555556% auto;
+  line-height: 2;
 }
 
 .my-class__heading3 {
-  font-size: clamp(3.2rem, 2.7777777778vw, 4rem);
-  margin: 5.5555555556% 0;
+  font-size: clamp(2.8rem, 2.5vw, 3.6rem);
+  margin: 11.1111111111% 0;
+  line-height: 1.5;
   padding-left: 4rem;
   position: relative;
 }
@@ -494,7 +495,7 @@ img {
   position: absolute;
   content: "";
   width: 2rem;
-  height: 6rem;
+  height: 100%;
   background: #4ea1d5;
   top: 50%;
   left: 0;
@@ -503,8 +504,9 @@ img {
 }
 
 .my-class__heading4 {
-  font-size: clamp(2.4rem, 0.2083333333vw, 3rem);
-  margin: 5.5555555556% 0;
+  font-size: clamp(2rem, 1.9444444444vw, 2.8rem);
+  margin: 11.1111111111% 0;
+  line-height: 1.5;
   padding-left: 4rem;
   position: relative;
 }
@@ -521,18 +523,26 @@ img {
           transform: translatey(-50%);
 }
 
+.my-class__heading5 {
+  font-size: clamp(1.2rem, 1.3888888889vw, 2rem);
+  margin: 5.5555555556% 0;
+}
+
+.my-class__figure {
+  display: block;
+  margin: 5.5555555556% auto;
+}
+
 .my-class__unorderdList {
   border: 3px dotted rgba(0, 104, 183, 0.3);
-  margin: 5.5555555556% auto;
-  padding: 2.7777777778%;
+  margin: 11.1111111111% auto;
+  padding: 2.7777777778% 2.7777777778% 2.7777777778% 5.5555555556%;
   width: 80%;
 }
 
 .my-class__listItem {
+  list-style: disc;
   line-height: 2;
-}
-.my-class__listItem:not(:nth-child(1)) {
-  margin: 3.4722222222% auto 0;
 }
 
 /* ===============================================
@@ -1437,6 +1447,7 @@ span.wpcf7-spinner {
 
 .main__card--title {
   font-size: clamp(3.2rem, 2.7777777778vw, 4rem);
+  line-height: 1.5;
 }
 
 .main__card--meta {
