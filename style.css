@@ -477,7 +477,7 @@ img {
 # custom css
 =============================================== */
 .my-class__unorderdList, .my-class__paragraph {
-  font-size: clamp(1rem, 1.1111111111vw, 1.6rem);
+  font-size: clamp(1.2rem, 1.25vw, 1.8rem);
 }
 
 .my-class__paragraph {
@@ -647,6 +647,83 @@ img {
 }
 
 /* ===============================================
+# table of contents
+=============================================== */
+#toc_container {
+  color: #1a1a1a;
+  margin: 11.1111111111% auto;
+  padding: 3.0864197531% 6.1728395062% 3.0864197531% 12.3456790123%;
+  width: 90% !important;
+}
+
+#toc_container.no_bullets.contracted {
+  width: 90% !important;
+}
+
+#toc_container .toc_title {
+  margin-bottom: 35px;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0px;
+  font-size: clamp(1.6rem, 1.6666666667vw, 2.4rem);
+}
+
+#toc_container .toc_list {
+  font-size: clamp(1.2rem, 1.3888888889vw, 2rem);
+  margin: 0 auto;
+  counter-reset: li;
+}
+
+#toc_container p.toc_title + ul.toc_list {
+  margin-top: 6.1728395062%;
+}
+
+#toc_container .toc_list > li {
+  position: relative;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  line-height: 1.5;
+  font-size: clamp(1.2rem, 1.3888888889vw, 2rem);
+}
+
+#toc_container .toc_list > li:after {
+  counter-increment: li;
+  content: "0" counter(li) " |";
+  position: absolute;
+  font-size: clamp(1.2rem, 1.3888888889vw, 2rem);
+  left: -6rem;
+  top: 0;
+  color: #4ea1d5;
+}
+
+#toc_container .toc_list > li a {
+  text-decoration: none !important;
+}
+
+#toc_container .toc_list > li a:hover {
+  text-decoration: underline !important;
+}
+
+#toc_container .toc_list > li ul {
+  margin-top: 15px;
+  padding-left: 20px;
+  color: #4ea1d5;
+}
+
+#toc_container .toc_list > li > ul li {
+  font-size: clamp(1rem, 1.1111111111vw, 1.6rem);
+  margin-bottom: 8px;
+}
+
+.toc_toggle a {
+  display: inline-block;
+}
+
+.toc_toggle {
+  margin: 0 3.7453183521%;
+}
+
+/* ===============================================
 # header
 =============================================== */
 .header {
@@ -749,20 +826,16 @@ img {
 .top {
   height: 57.2916666667vw;
   position: relative;
+  max-width: 144rem;
   max-height: 82.5rem;
+  margin: 0 auto;
 }
 
 .top__item {
-  -webkit-box-shadow: 4px -4px 8px rgba(26, 26, 26, 0.5);
-          box-shadow: 4px -4px 8px rgba(26, 26, 26, 0.5);
   border-radius: 8px;
   position: absolute;
-  top: 40%; /* 初期位置 */
-  left: 65%; /* 初期位置 */
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
           transform: translate(-50%, -50%) rotate(45deg);
-  -webkit-filter: grayscale(90%);
-          filter: grayscale(90%);
   -webkit-transition: -webkit-filter 0.3s ease;
   transition: -webkit-filter 0.3s ease;
   transition: filter 0.3s ease;
@@ -772,8 +845,37 @@ img {
 .top__item img {
   border-radius: 10px;
 }
-.top__item:nth-child(1) {
-  z-index: 100;
+.top__item:nth-of-type(1) {
+  top: 40%;
+  left: 61%;
+}
+.top__item:nth-of-type(2) {
+  top: 80%;
+  left: 61%;
+}
+.top__item:nth-of-type(3) {
+  top: 80%;
+  left: 84.5%;
+}
+.top__item:nth-of-type(4) {
+  top: 27%;
+  left: 84.5%;
+}
+.top__item:nth-of-type(5) {
+  top: 53.5%;
+  left: 76.5%;
+}
+.top__item:nth-of-type(6) {
+  top: 13.5%;
+  left: 69%;
+}
+.top__item:nth-of-type(7) {
+  top: 67%;
+  left: 68.8%;
+}
+.top__item:nth-of-type(8) {
+  top: 107%;
+  left: 68.8%;
 }
 
 .top__item--large {
@@ -783,7 +885,16 @@ img {
 
 .top__item--small {
   max-width: 15rem;
-  width: 10.4166666667vw;
+  width: 9.7222222222vw;
+}
+
+.top__item--gray {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+.top__item--gray:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
 }
 
 /* ===============================================

@@ -1,0 +1,75 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# table of contents
+=============================================== */
+
+
+#toc_container {
+    color: $color-text;
+    margin: (80/720)*100% auto;
+    padding: (20/648)*100% (40/648)*100% (20/648)*100% (80/648)*100%;
+    width: 90% !important;
+  }
+#toc_container.no_bullets.contracted {
+    width: 90% !important;
+  }
+#toc_container .toc_title {
+    margin-bottom: 35px;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0px;
+    font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
+}
+
+#toc_container .toc_list {
+    font-size: clamp(1.2rem,(20/1440)*100vw,2rem);
+    margin: 0 auto ;
+    counter-reset: li; 
+}
+#toc_container p.toc_title+ul.toc_list {
+    margin-top: (40/648)*100%;
+}
+
+#toc_container .toc_list > li {
+    position: relative;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    line-height: 1.5;
+    font-size: clamp(1.2rem,(20/1440)*100vw,2rem);
+  }
+
+#toc_container .toc_list > li:after {
+    counter-increment: li;
+    content: "0" counter(li) " |";
+    position: absolute;
+    font-size: clamp(1.2rem,(20/1440)*100vw,2rem);
+    left: -6rem;
+    top: 0;
+    color: $color-accent;
+}
+
+#toc_container .toc_list > li a {
+    text-decoration: none !important;   
+}
+
+#toc_container .toc_list > li a:hover {
+    text-decoration: underline !important; 
+}
+
+#toc_container .toc_list > li ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: $color-accent; 
+}
+
+#toc_container .toc_list > li > ul li {
+    font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
+    margin-bottom: 8px; 
+}
+.toc_toggle a{
+    display: inline-block;
+}
+.toc_toggle {
+    margin: 0 (20/534)*100% ;
+}

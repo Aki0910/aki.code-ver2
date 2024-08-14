@@ -4,20 +4,29 @@
 
 <section class="top">
     <ul class="top__list">
-        <li class="top__item top__item--large">
+        <li class="top__item top__item--large top__item--gray">
             <img src="<?php echo esc_url(get_theme_file_uri('/img/top-aki.png')); ?>" alt="トップ画像">
         </li>
-        <li class="top__item top__item--small">
-            <img src="<?php echo esc_url(get_theme_file_uri('/img/top-book.png')); ?>" alt="トップ画像">
+        <li class="top__item top__item--small top__item--gray">
+            <img src="<?php echo esc_url(get_theme_file_uri('/img/top-pc.png')); ?>" alt="トップ画像">
         </li>
-        <li class="top__item top__item--large">
+        <li class="top__item top__item--large top__item--gray">
             <img src="<?php echo esc_url(get_theme_file_uri('/img/top-dive.png')); ?>" alt="トップ画像">
         </li>
         <li class="top__item top__item--large">
-            <img src="<?php echo esc_url(get_theme_file_uri('/img/top-pc.png')); ?>" alt="トップ画像">
+            <img src="<?php echo esc_url(get_theme_file_uri('/img/a.png')); ?>" alt="トップ画像">
+        </li>
+        <li class="top__item top__item--small top__item--gray">
+            <img src="<?php echo esc_url(get_theme_file_uri('/img/top-travel.png')); ?>" alt="トップ画像">
         </li>
         <li class="top__item top__item--small">
-            <img src="<?php echo esc_url(get_theme_file_uri('/img/top-travel.png')); ?>" alt="トップ画像">
+            <img src="<?php echo esc_url(get_theme_file_uri('/img/rectangle.png')); ?>" alt="トップ画像">
+        </li>
+        <li class="top__item top__item--small">
+            <img src="<?php echo esc_url(get_theme_file_uri('/img/rectangle.png')); ?>" alt="トップ画像">
+        </li>
+        <li class="top__item top__item--large">
+            <img src="<?php echo esc_url(get_theme_file_uri('/img/designcode.png')); ?>" alt="トップ画像">
         </li>
     </ul>
 </section>

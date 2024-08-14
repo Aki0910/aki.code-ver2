@@ -5,11 +5,10 @@
 =============================================== */
 
 %my-class-base {
-    font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
+    font-size: clamp(1.2rem,(18/1440)*100vw,1.8rem);
 }
 .my-class__paragraph {
     @extend %my-class-base;
-    // margin: (64/720)*100% auto;
     line-height: 2;
 }
 .my-class__heading1 {

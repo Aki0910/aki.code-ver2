@@ -39,57 +39,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    window.addEventListener('load', function() {
 
-    // 各画像の移動先位置を指定
-    const targetPositions = [
-        { top: '30%', left: '60%' }, // 1番目の画像
-        { top: '70%', left: '60%' }, // 2番目の画像
-        { top: '85%', left: '77%' }, // 3番目の画像
-        { top: '43%', left: '85%' }, // 4番目の画像
-        { top: '15%', left: '76%' },  // 5番目の画像
-        { top: '56%', left: '63%' }  // 5番目の画像
-    ];
 
-    // アニメーションを設定する要素を選択
     const items = document.querySelectorAll('.top__item');
+    
+    // 画像がすべて読み込まれるのを待つ
+    let loadedImagesCount = 0;
+    const totalImages = items.length;
 
+    items.forEach(item => {
+        const img = item.querySelector('img');
+        img.onload = () => {
+            loadedImagesCount++;
+            if (loadedImagesCount === totalImages) {
+                startFadeInAnimation();
+            }
+        };
 
+        // キャッシュされた画像をサポートするために、以下のようにしています
+        if (img.complete) {
+            img.onload();
+        }
+    });
 
-    // GSAPタイムライン
-    items.forEach((item, index) => {
-        // 新しいタイムラインを作成
-        const tl = gsap.timeline({
-            delay: 0.5 // ページ読み込み後の待機時間
-        });
+    function startFadeInAnimation() {
+        // 画像を一旦透明にしておく
+        gsap.set(items, { autoAlpha: 0 });
 
-        // topとleftの移動を設定
-        tl.to(item, {
-            top: targetPositions[index].top,
-            left: targetPositions[index].left,
-            duration: 1.0, // アニメーションの持続時間
-            ease: "power2.out"
-        })
-        .call(() => {
-            // アニメーション終了後0.5秒後にgrayscaleを解除
-            gsap.delayedCall(0.5, () => {
-                item.style.filter = 'grayscale(0%)';
+        // 画像をランダムな順番でフェードイン
+        items.forEach(item => {
+            gsap.to(item, {
+                autoAlpha: 1,
+                duration: 1.5,
+                delay: Math.random() * 2 // ランダムなディレイ
             });
         });
-    });
-
-    // スクロールに合わせてパララックスを適用
-    window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
-        items.forEach(item => {
-            const speed = 0.2; // パララックスの速度
-            const offset = scrollY * speed;
-            item.style.transform = `translate(-50%, calc(-50% + ${offset}px)) rotate(45deg)`;
-        });
-    });
-
-
-    });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
