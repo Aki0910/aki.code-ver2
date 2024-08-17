@@ -46,8 +46,7 @@
                 <p>薬剤師として働きながら、Web制作に興味を持ち学習を開始。</p>
                 <p>０から作り上げるやりがいと、新しい知識を身につけることの楽しさから</p>
                 <p>見事コーディングにハマり、web制作へのめり込むように。</p>
-                <p>現在はフリーランスとして2社と業務委託契約を締結、</p>
-                <p>ホームページ制作と教材作成のチーム開発に従事。</p>
+                <p>現在は2社と業務委託契約を締結し、ホームページ制作と教材作成のチーム開発に従事。</p>
             </dd>
         </dl>
         <ul class="sns__list">
@@ -268,7 +267,7 @@
 </section>
 
 
-<section class="contact-form" id="contact-form">
+<section class="contact-form" id="contact">
     <div class="inner">
         <h2 class="section__title contact-form__title">お問い合わせ</h2>
         <div class="contact-form__info">

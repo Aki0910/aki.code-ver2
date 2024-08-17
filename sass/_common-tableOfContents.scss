@@ -15,10 +15,10 @@
     width: 90% !important;
   }
 #toc_container .toc_title {
-    margin-bottom: 35px;
+    margin-bottom: 3.5rem;
     margin-top: 0;
     padding-top: 0;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
 }
 
@@ -37,7 +37,7 @@
     margin-left: 2rem;
     line-height: 1.5;
     font-size: clamp(1.2rem,(20/1440)*100vw,2rem);
-  }
+}
 
 #toc_container .toc_list > li:after {
     counter-increment: li;
@@ -58,18 +58,44 @@
 }
 
 #toc_container .toc_list > li ul {
-    margin-top: 15px;
-    padding-left: 20px;
+    margin-top: 1.5rem;
     color: $color-accent; 
 }
 
 #toc_container .toc_list > li > ul li {
     font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
-    margin-bottom: 8px; 
+    margin-bottom: 0.8rem; 
 }
 .toc_toggle a{
     display: inline-block;
 }
 .toc_toggle {
     margin: 0 (20/534)*100% ;
+}
+
+.toc_widget_list {
+    color: $color-text;
+    padding: (20/648)*100% (40/648)*100% (20/648)*100% (60/648)*100%;
+    width: 100%;
+    counter-reset: li; 
+
+}
+.toc_widget_list > li {
+    position: relative;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    line-height: 1.5;
+    font-size: clamp(1.0rem,(14/1440)*100vw,1.4rem);
+}
+.toc_widget_list  > li:after {
+    counter-increment: li;
+    content: "0" counter(li) " |";
+    position: absolute;
+    font-size: clamp(1.0rem,(14/1440)*100vw,1.4rem);
+    left: -4rem;
+    top: 0;
+    color: $color-accent;
+}
+.toc_widget_list li ul li {
+    color: $color-accent;
 }

@@ -12,7 +12,7 @@
                     「<?php echo esc_html($_GET['s']); ?>」の検索結果：<?php echo $wp_query->found_posts; ?>件
                 </h1>
 
-            <?php get_template_part('loop'); ?>
+            <?php get_template_part('template/loop'); ?>
 
             <?php
             if(function_exists('pagination')) {

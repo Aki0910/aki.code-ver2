@@ -28,7 +28,7 @@ function st_enqueue_scripts() {
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array('gsap-st'), null, true );
 
     // Your animation code file - with gsap.js passed as a dependency
-    wp_enqueue_script( 'gsap-js2', get_template_directory_uri() . '/js/app.js', array('script'), null, true );
+    // wp_enqueue_script( 'gsap-js2', get_template_directory_uri() . '/js/app.js', array('script'), null, true );
 }
 add_action('wp_enqueue_scripts', 'st_enqueue_scripts');
 
@@ -65,20 +65,26 @@ function my_wpcf7_autop(){
     return false;
 }
 
- /**
-  * サイドバーの追加
-  */
-  if(function_exists('register_sidebar')) {
+/**
+ * asideの追加
+ */
+function my_custom_sidebar() {
     register_sidebar(array(
-        'name' => 'サイドバー',
-        'id' => 'sidebar',
-        'description' => 'サイドバーウィジェット',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '<h3 class="archive__title">',
-        'after_title' => '</h3>'
+        'name' => __('aside', 'your-theme-textdomain'), // サイドバーの名前
+        'id' => 'aside', // サイドバーのID
+        'description' => __('A custom sidebar for blog posts', 'your-theme-textdomain'), // サイドバーの説明
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">', // ウィジェットの前に追加されるHTML
+        'after_widget' => '</aside>', // ウィジェットの後に追加されるHTML
+        'before_title' => '<h3 class="widget-title">', // ウィジェットタイトルの前に追加されるHTML
+        'after_title' => '</h3>', // ウィジェットタイトルの後に追加されるHTML
     ));
 }
+add_action('widgets_init', 'my_custom_sidebar');
+
+
+
+
+
 
 /**
  * 検索対象を投稿ページのみにするカスタマイズ
@@ -146,6 +152,7 @@ function add_custom_classes_to_content($content) {
 }
 
 add_filter('the_content', 'add_custom_classes_to_content');
+
 
 
 

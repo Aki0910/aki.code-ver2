@@ -1,0 +1,38 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# search form
+=============================================== */
+
+.search-form {
+    background: $color-titleBg1;
+    margin-top: (80/360)*100%;
+    padding: (35/360)*100% (30/360)*100%;
+    position: relative;
+  }
+   
+  .search-field {
+      background: $color-main;
+      border: none;
+      padding: (20/360)*100%;
+      min-height: 8rem;
+      width: 100%;
+  }
+   
+  .search-submit {
+    position: absolute;
+    top: 50%;
+    right: (50/1440)*100vw;
+    display: block;
+    padding: 0;
+    cursor: pointer;
+    transform: translateY(-50%);
+    color: #000;
+    border: none;
+    background: transparent;
+  }
+   
+  .searchsubmit:hover {
+    opacity: .6;
+  }
+  

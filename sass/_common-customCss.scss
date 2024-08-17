@@ -81,29 +81,23 @@
 
 }
 .my-class__table {
+    min-height: 40rem;
+}
+m.y-class__tableHead {
 
 }
-.my-class__table-head {
+.my-class__tableBody {
+    font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+}
+.my-class__tableRow {
+    &:nth-child(1) {
+        background: rgba(0, 104, 183, .3);
+
+    }
+}
+.my-class__tableHeader {
 
 }
-.my-class__table-body {
-
-}
-.my-class__table-row {
-
-}
-.my-class__table-header {
-
-}
-.my-class__table-data {
-
-}
-.my-class__button {
-
-}
-.my-class__code {
-
-}
-.my-class__pre {
+.my-class__tableData {
 
 }

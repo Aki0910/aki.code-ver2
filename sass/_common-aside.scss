@@ -1,0 +1,131 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# aside
+=============================================== */
+.aside {
+    font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
+    padding: (80/1280)*100% 0;
+}
+.aside__author {
+
+    .sns__list {
+        justify-content: center;
+        margin-top: (40/360)*100%;
+    }
+}
+.aside__img {
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    width: (200/1440)*100vw;
+}
+.aside__title {
+    border-bottom: 2px solid $color-accent;
+    line-height: 2;
+    margin: (40/360)*100% auto 0;
+    width: fit-content;
+}
+.aside__introBox {
+    line-height: 1.5;
+    margin: (40/360)*100% (30/360)*100% 0;
+}
+.aside__list {
+    margin: (40/360)*100% auto;
+    padding-left: (20/360)*100%;
+}
+.aside__item {
+    list-style: square;
+}
+
+.aside__cta {
+    position: relative;
+    margin-top: (80/360)*100%;
+}
+.aside__ctaWrap {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $color-main;
+    line-height: 2;
+    width: 100%;
+    height: 100%;
+}
+.aside__ctaTitle {
+    font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
+}
+.aside__ctaIcon {
+    margin: 0 auto ;
+    width: 2.4rem;
+}
+.aside__ctaText {
+    font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
+}
+
+.aside__category {
+    margin: (40/360)*100% (30/360)*100% 0;
+}
+.category__title {
+    font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
+    text-align: center;
+}
+.category__list {
+    font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
+    margin-top: (80/360)*100%;
+}
+.category__item {
+    margin-top: (40/360)*100%;
+    padding-left: (60/360)*100%;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.category__homepage {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background: url(./img/pc-icon.png) no-repeat center center / cover;
+        width: 2.4rem;
+        height: 2.4rem;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+.category__seo {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background: url(./img/seo-icon.png) no-repeat center center / cover;
+        width: 2.4rem;
+        height: 2.4rem;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+.category__marketing {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background: url(./img/marketing-icon.png) no-repeat center center / cover;
+        width: 2.4rem;
+        height: 2.4rem;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.toc_widget_list {
+    position: sticky;
+}
