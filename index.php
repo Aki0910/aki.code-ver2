@@ -267,7 +267,7 @@
 </section>
 
 
-<section class="contact-form" id="contact">
+<section class="contact-form" id="contact" id="contact-form">
     <div class="inner">
         <h2 class="section__title contact-form__title">お問い合わせ</h2>
         <div class="contact-form__info">

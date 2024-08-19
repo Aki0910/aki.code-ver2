@@ -31,8 +31,22 @@
     font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
 }
 .header-works__item {
-
     margin-left: (80/1440)*100vw;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 0.4rem;
+        background: $color-accent;
+        top: 100%;
+        left: 0;
+        transition: width 0.4s ease-in-out;
+
+    }
+    &:hover::before {
+        animation: hoverAnimation 0.4s forwards;
+    }
 }
 .header-works__contact {
     color: $color-accent;

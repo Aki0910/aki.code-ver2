@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -156,4 +158,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // まず、元の位置を -100px 上に設定します
+    gsap.set(".header__logo, .header__item, .header-works__logo, .header-works__item", {
+        y: -100, // 上にオフセット
+        opacity: 0 // 透明にする
+    });
+
+    // 2秒後にアニメーション開始
+    setTimeout(function() {
+        // ロゴを最初にアニメーションさせる
+        gsap.to(".header__logo, .header-works__logo", {
+            y: 0, // 元の位置に戻る
+            opacity: 1, // フェードイン
+            duration: 1,
+            ease: "power2.out",
+            delay: 0, // 最初にアニメーション
+        });
+
+        // メニュー項目を1つずつ順番にアニメーションさせる
+        gsap.to(".header__item, .header-works__item", {
+            y: 0, // 元の位置に戻る
+            opacity: 1, // フェードイン
+            duration: 1,
+            ease: "power2.out",
+            delay: 0.4, // 2秒後からアニメーション開始
+            stagger: 0.4, // 各アイテムの間隔
+        });
+    }, 2500); // 2秒後にアニメーションを開始
 });

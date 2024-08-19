@@ -9,8 +9,10 @@
 @use "common-tableOfContents";
 @use "common-aside";
 @use "common-searchform";
-@use "header";
-@use "header-works";
+@use "common-header";
+@use "common-header-works";
+@use "common-footer";
+@use "common-footer-works";
 @use "top";
 @use "top-profile";
 @use "top-works";
@@ -22,6 +24,5 @@
 @use "archive-works";
 @use "single-post";
 @use "single-works";
-@use "footer";
-@use "footer-works";
+
 
