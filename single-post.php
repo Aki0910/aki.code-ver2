@@ -43,9 +43,15 @@
                             <?php the_content(); ?>
                         </div>
                         
-                        <ul class="post-link">
-                            <li><?php previous_post_link('%link', '< 前の記事へ'); ?></li>
-                            <li><?php next_post_link('%link', '次の記事へ >'); ?></li>
+                        <ul class="post__link">
+                            <li class="post__item">
+                                <div class="post__preTitle"><?php previous_post_link('%link', '%title'); ?></div>
+                                <div class="post__preLink"><?php previous_post_link('%link', '< 前の記事へ'); ?></div>
+                            </li>
+                            <li class="post__item">
+                                <div class="post__nextTitle"><?php next_post_link('%link', '%title'); ?></div>
+                                <div class="post__nextLink"><?php next_post_link('%link', '次の記事へ >'); ?></div>
+                            </li>
                         </ul>
 
                         <div class="main__reration">

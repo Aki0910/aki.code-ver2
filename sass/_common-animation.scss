@@ -1,0 +1,10 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# animation
+=============================================== */
+
+.js-fadeInUp {
+  opacity: 0;
+  transform: translateY(5rem);
+}

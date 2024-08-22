@@ -78,6 +78,11 @@ function my_custom_sidebar() {
         'before_title' => '<h3 class="widget-title">', // ウィジェットタイトルの前に追加されるHTML
         'after_title' => '</h3>', // ウィジェットタイトルの後に追加されるHTML
     ));
+    // register_sidebar(array(
+    //     'name' => __('toc', 'your'), // サイドバーの名前
+    //     'id' => 'toc', // サイドバーのID
+    //     'description' => __('A custom sidebar for blog posts', 'your-theme-textdomain'), // サイドバーの説明
+    // ));
 }
 add_action('widgets_init', 'my_custom_sidebar');
 

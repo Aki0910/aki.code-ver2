@@ -91,11 +91,20 @@
     counter-increment: li;
     content: "0" counter(li) " |";
     position: absolute;
-    font-size: clamp(1.0rem,(14/1440)*100vw,1.4rem);
-    left: -4rem;
+    font-size: clamp(.8rem,(14/1440)*100vw,1.4rem);
+    left: -(40/265)*100%;
     top: 0;
     color: $color-accent;
 }
 .toc_widget_list li ul li {
     color: $color-accent;
+}
+
+#toc-widget-5 {
+}
+.toc_widget_list {
+    border: 1px solid $color-titleBg1;
+    height: (400/1440)*100vw;
+    margin-top: (40/360)*100%;
+    overflow-y: scroll;
 }

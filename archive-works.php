@@ -35,8 +35,8 @@
                                     <img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>" />
                                 <?php endif; ?>
                             </div>
-                            <h3 class="archive-works__company"><?php echo get_the_title(); ?></h3>
-                            <p class="archive-works__role"><?php echo esc_html(get_post_meta(get_the_ID(), 'role', true)); ?></p>
+                            <h3 class="archive-works__company js-fadeInUp"><?php echo get_the_title(); ?></h3>
+                            <p class="archive-works__role js-fadeInUp"><?php echo esc_html(get_post_meta(get_the_ID(), 'role', true)); ?></p>
                         </a>
                     </li>
                     <?php endwhile; ?>

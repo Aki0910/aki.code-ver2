@@ -56,8 +56,11 @@
 
 }
 .my-class__heading5 {
+    border-bottom: .2rem solid $color-accent;
     font-size: clamp(1.2rem,(20/1440)*100vw,2rem);
     margin: (40/720)*100% 0;
+    line-height: 2;
+    width: fit-content;
 }
 .my-class__heading6 {
 

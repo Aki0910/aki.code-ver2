@@ -1,0 +1,42 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# post link
+=============================================== */
+
+.post__link {
+	align-items: start;
+	display: flex;
+	justify-content: center;
+	margin: (200/720)*100% auto;
+}
+.post__item {
+	background: $color-bg;
+	font-size: clamp(1.0rem,(14/1440)*100vw,1.4rem);
+	min-height: 14rem;
+	padding: (20/720)*100%;
+	transition: all .4s ease 0s;
+	width: 45%;
+
+	&:nth-child(1) {
+		border-right: .2rem solid $color-titleBg1;
+	}
+
+	&:hover {
+		background: rgba(78, 161, 213, .1);
+	}
+}
+.post__preTitle {
+	line-height: 2;
+}
+.post__preLink {
+	margin-top: (20/324)*100%;
+	text-align: center;
+}
+.post__nextTitle {
+	line-height: 2;
+}
+.post__nextLink {
+	margin-top: (20/324)*100%;
+	text-align: center;
+}

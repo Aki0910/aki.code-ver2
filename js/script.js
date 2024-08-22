@@ -38,9 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-
-
-
     const items = document.querySelectorAll('.top__item');
     
     // 画像がすべて読み込まれるのを待つ
@@ -76,8 +73,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    
+    document.querySelectorAll('.js-fadeInUp').forEach(fadeInUp => {
+        gsap.to(fadeInUp, {
+          duration: 1.5,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: fadeInUp,
+            start: "top 80%", // 各テキスト要素が画面の中央に来たら発火
+            toggleActions: "play none none none",
+          }
+        });
+      });
+
+
+    gsap.utils.toArray('.works__item').forEach((item, index) => {
+    gsap.timeline({
+        scrollTrigger: {
+        trigger: item,
+        start: "top 70%", // Trigger the animation when the top of the item reaches the center of the viewport
+        toggleActions: "play none none reverse", // Play animation when entering, and reverse when leaving
+        }
+    })
+    .to(item.querySelector('.works__img img'), { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        delay: index * 0.8, // 各アイテムに対する遅延
+        ease: "power1.inOut" // イージングを指定
+    });
+    });
+
+    gsap.utils.toArray('.archive-works__item').forEach((item) => {
+    gsap.timeline({
+        scrollTrigger: {
+        trigger: item,
+        start: "top 80%", // Trigger the animation when the top of the item reaches the center of the viewport
+        toggleActions: "play none none reverse", // Play animation when entering, and reverse when leaving
+        }
+    })
+    .to(item.querySelector('.archive-works__img img'), { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1, 
+        ease: "power1.inOut", // イージングを指定
+    });
+    });
+
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slider__img');
@@ -158,35 +204,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // まず、元の位置を -100px 上に設定します
-    gsap.set(".header__logo, .header__item, .header-works__logo, .header-works__item", {
-        y: -100, // 上にオフセット
-        opacity: 0 // 透明にする
-    });
-
-    // 2秒後にアニメーション開始
-    setTimeout(function() {
-        // ロゴを最初にアニメーションさせる
-        gsap.to(".header__logo, .header-works__logo", {
-            y: 0, // 元の位置に戻る
-            opacity: 1, // フェードイン
-            duration: 1,
-            ease: "power2.out",
-            delay: 0, // 最初にアニメーション
-        });
-
-        // メニュー項目を1つずつ順番にアニメーションさせる
-        gsap.to(".header__item, .header-works__item", {
-            y: 0, // 元の位置に戻る
-            opacity: 1, // フェードイン
-            duration: 1,
-            ease: "power2.out",
-            delay: 0.4, // 2秒後からアニメーション開始
-            stagger: 0.4, // 各アイテムの間隔
-        });
-    }, 2500); // 2秒後にアニメーションを開始
 });

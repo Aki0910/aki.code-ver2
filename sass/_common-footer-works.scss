@@ -24,6 +24,7 @@
 }
 .footer-works__logo {
     font-family: $font-en;
+    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
     font-style: italic;
     width: fit-content;
 }
@@ -39,6 +40,7 @@
     width: 50%;
 }
 .footer-works__list {
+    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
 }
 .footer-works__item {
     width: fit-content;

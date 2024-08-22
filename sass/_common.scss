@@ -72,7 +72,7 @@ img {
 
 .section__title {
   font-family: $font-ja;
-  font-size: clamp(2.4rem,(32/1440)*100vw,3.2rem);
+  font-size: clamp(2.0rem,(32/1440)*100vw,3.2rem);
   font-weight: 700;
   position: relative;
   z-index: 10;
@@ -84,7 +84,7 @@ img {
     left: 0;
     color: $color-titleBg1;
     font-family: $font-en;
-    font-size: clamp(8rem,(128/1440)*100vw,12.8rem);
+    font-size: clamp(6.4rem,(128/1440)*100vw,12.8rem);
     font-weight: 400;
     letter-spacing: 0.1em;
     z-index: -1;
@@ -101,6 +101,10 @@ img {
   height: (200/1440)*100vw;
   position: relative;
   margin-top: (80/1440)*100vw;
+
+  &:hover {
+    scale: 1.2;
+  }
 }
 .button__content {
   position: absolute;
@@ -120,25 +124,3 @@ img {
   text-align: center;
 }
 
-#stalker {
-  pointer-events: none;
-  position: fixed;
-  top: -1rem;
-  left: -1rem;
-  width: 2rem;
-  height: 2rem;  
-  background: rgba(26, 26, 26, .5);
-  border-radius: 50%;
-  transition: transform 0.3s, top, 0.3s, left 0.3s, width 0.5s, height 0.5s, background-color 0.5s;
-  transition-timing-function: ease-out;
-  z-index: 100;
-
-  &.mouseover{
-    width: 20rem;
-    height: 20rem;
-    top: -10rem;
-    left: -10rem;
-    transition: .4s;
-    background: rgba(78, 161, 213, .7);
-  }
-}

@@ -14,15 +14,15 @@
 }
 .profile__name {
     font-family: $font-en;
-    font-size: clamp(2.4rem,(32/1440)*100vw,3.2rem);
+    font-size: clamp(2.0rem,(28/1440)*100vw,2.8rem);
     font-weight: 700;
 }
 .profile__hobby {
-    font-size: clamp(2.0rem,(24/1440)*100vw,2.4rem);
+    font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
     margin-top: (56/645)*100%;
 }
 .profile__desxcription {
-    font-size: clamp(1.4rem,(20/1440)*100vw,2.0rem);
+    font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
     line-height: 2;
     margin-top: (40/645)*100%;
 

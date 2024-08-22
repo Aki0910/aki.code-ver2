@@ -21,10 +21,11 @@
     font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
 }
 .footer__left {
-    width: 50%;
+    width: 45%;
 }
 .footer__logo {
     font-family: $font-en;
+    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
     font-style: italic;
     width: fit-content;
 }
@@ -33,13 +34,15 @@
     line-height: 1.5;
 }
 .footer__text {
-    font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+    font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
 }
 .footer__right {
     font-family: $font-en;
-    width: 50%;
+    margin-left: 10%;
+    width: 45%;
 }
 .footer__list {
+    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
 }
 .footer__item {
     width: fit-content;
