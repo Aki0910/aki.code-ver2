@@ -449,6 +449,25 @@ img {
   text-align: center;
 }
 
+.mouse-stalker {
+  position: absolute;
+  width: 13.8888888889vw;
+  height: 13.8888888889vw;
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.mouse-stalker-white {
+  background: #fff;
+}
+
+.mouse-stalker-blue {
+  background: #4ea1d5;
+}
+
 /* ===============================================
 # custom css
 =============================================== */
@@ -1020,43 +1039,7 @@ img {
   margin-left: 5.5555555556vw;
   position: relative;
 }
-.header__item::before {
-  position: absolute;
-  content: "";
-  width: 0%;
-  height: 0.4rem;
-  background: #4ea1d5;
-  top: 100%;
-  left: 0;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-.header__item:hover::before {
-  -webkit-animation: hoverAnimation 0.4s forwards;
-          animation: hoverAnimation 0.4s forwards;
-}
 
-@-webkit-keyframes hoverAnimation {
-  from {
-    width: 0%;
-    background-color: #4ea1d5;
-  }
-  to {
-    width: 100%;
-    background-color: #4ea1d5;
-  }
-}
-
-@keyframes hoverAnimation {
-  from {
-    width: 0%;
-    background-color: #4ea1d5;
-  }
-  to {
-    width: 100%;
-    background-color: #4ea1d5;
-  }
-}
 .header__contact {
   color: #4ea1d5;
 }

@@ -13,9 +13,9 @@
           </li>
           <li class="footer__right">
             <ul class="footer__list">
-              <li class="footer__item"><a href="<?php echo esc_url(home_url('#works')); ?>">Works</a></li>
-              <li class="footer__item"><a href="<?php echo esc_url(home_url('#blog')); ?>">Blog</a></li>
-              <li class="footer__item"><a href="<?php echo esc_url(home_url('#contact')); ?>">Contact</a></li>
+              <li class="footer__item"><a class="button__white" href="<?php echo esc_url(home_url('#works')); ?>">Works</a></li>
+              <li class="footer__item"><a class="button__white" href="<?php echo esc_url(home_url('#blog')); ?>">Blog</a></li>
+              <li class="footer__item"><a class="button__white" href="<?php echo esc_url(home_url('#contact')); ?>">Contact</a></li>
             </ul>
           </li>
         </ul>

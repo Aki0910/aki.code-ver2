@@ -5,9 +5,9 @@
         <h1 class="header-works__logo"><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
         <nav class="header-works__nav">
           <ul class="header-works__list">
-            <li class="header-works__item"><a href="<?php echo esc_url(home_url('#works')); ?>">Works</a></li>
-            <li class="header-works__item"><a href="<?php echo esc_url(home_url('#blog')); ?>">Blog</a></li>
-            <li class="header-works__item"><a href="<?php echo esc_url(home_url('#contact')); ?>"><span class="header__contact">Contact<span></a></li>
+            <li class="header-works__item"><a class="button__white" href="<?php echo esc_url(home_url('#works')); ?>">Works</a></li>
+            <li class="header-works__item"><a class="button__white" href="<?php echo esc_url(home_url('#blog')); ?>">Blog</a></li>
+            <li class="header-works__item"><a class="button__blue" href="<?php echo esc_url(home_url('#contact')); ?>"><span class="header__contact">Contact<span></a></li>
           </ul>
         </nav>
       </div>

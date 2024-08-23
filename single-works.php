@@ -48,7 +48,7 @@
                 <?php echo esc_html(get_post_meta(get_the_ID(), 'details', true)); ?>
             </p>
 
-            <a class="button single-works__button" href="<?php echo esc_html(get_post_meta(get_the_ID(), 'url', true)); ?>">
+            <a class="button single-works__button button__white" href="<?php echo esc_html(get_post_meta(get_the_ID(), 'url', true)); ?>">
                     <div class="button__content">
                         <div class="button__img">
                             <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-white.png')); ?>" alt="実績一覧を見る">

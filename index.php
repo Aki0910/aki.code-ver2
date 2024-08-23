@@ -102,7 +102,7 @@
                     wp_reset_postdata();
                 ?>
 
-                <a class="button works__button" href="<?php echo esc_url(home_url('/works/')); ?>">
+                <a class="button works__button button__white" href="<?php echo esc_url(home_url('/works/')); ?>">
                     <div class="button__content">
                         <div class="button__img">
                             <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-white.png')); ?>" alt="実績一覧を見る">
@@ -196,7 +196,7 @@
                     wp_reset_postdata();
                 ?>
             </ul>
-            <a class="button topics__button" href="<?php echo esc_url(home_url('/topics/')); ?>">
+            <a class="button topics__button button__blue" href="<?php echo esc_url(home_url('/topics/')); ?>">
                     <div class="button__content">
                         <div class="button__img">
                             <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">
@@ -254,7 +254,7 @@
                     wp_reset_postdata();
                 ?>
             </ul>
-            <a class="button blog__button" href="<?php echo esc_url(home_url('/post/')); ?>">
+            <a class="button blog__button button__blue" href="<?php echo esc_url(home_url('/post/')); ?>">
                 <div class="button__content">
                     <div class="button__img">
                         <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-blue.png')); ?>" alt="">

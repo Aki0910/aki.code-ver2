@@ -205,3 +205,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+
+// 共通の関数を作成
+function createMouseStalker(button, colorClass) {
+    const stalker = document.createElement('div');
+    stalker.className = `mouse-stalker ${colorClass}`;
+    button.appendChild(stalker);
+  
+    button.addEventListener('mousemove', (e) => {
+      const rect = button.getBoundingClientRect();
+      const x = e.clientX - rect.left - 10;
+      const y = e.clientY - rect.top - 25;
+  
+      gsap.to(stalker, {
+        x: x,
+        y: y,
+        opacity: 0.5,
+        duration: 0.3,
+        ease: "power1.out"
+      });
+    });
+  
+    button.addEventListener('mouseleave', () => {
+      gsap.to(stalker, {
+        opacity: 0,
+        duration: 0.3
+      });
+    });
+  }
+  
+  // 白色マウスストーカーを作成するボタン
+  document.querySelectorAll('.button__white').forEach(button => {
+    createMouseStalker(button, 'mouse-stalker-white');
+  });
+  
+  // 青色マウスストーカーを作成するボタン
+  document.querySelectorAll('.button__blue').forEach(button => {
+    createMouseStalker(button, 'mouse-stalker-blue');
+  });
+  
+  
