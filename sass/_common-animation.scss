@@ -8,3 +8,20 @@
   opacity: 0;
   transform: translateY(5rem);
 }
+
+.mouse-stalker {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.mouse-stalker-white {
+  background: $color-main;
+}
+
+.mouse-stalker-blue {
+  background: $color-accent;
+}

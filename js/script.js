@@ -215,8 +215,8 @@ function createMouseStalker(button, colorClass) {
   
     button.addEventListener('mousemove', (e) => {
       const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left - 10;
-      const y = e.clientY - rect.top - 25;
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
   
       gsap.to(stalker, {
         x: x,

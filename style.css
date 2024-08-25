@@ -449,25 +449,6 @@ img {
   text-align: center;
 }
 
-.mouse-stalker {
-  position: absolute;
-  width: 13.8888888889vw;
-  height: 13.8888888889vw;
-  border-radius: 50%;
-  pointer-events: none;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  opacity: 0;
-}
-
-.mouse-stalker-white {
-  background: #fff;
-}
-
-.mouse-stalker-blue {
-  background: #4ea1d5;
-}
-
 /* ===============================================
 # custom css
 =============================================== */
@@ -994,6 +975,25 @@ img {
   opacity: 0;
   -webkit-transform: translateY(5rem);
           transform: translateY(5rem);
+}
+
+.mouse-stalker {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.mouse-stalker-white {
+  background: #fff;
+}
+
+.mouse-stalker-blue {
+  background: #4ea1d5;
 }
 
 /* ===============================================
