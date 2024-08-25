@@ -1,17 +1,17 @@
 
     <?php while (have_posts() ) : the_post(); ?>
     <article class="main__card main__searchResult">
-    <li class="blog__item">
+    <li class="main__blogItem">
         <a class="blog__anchor" href="<?php the_permalink(); ?>">
-            <div class="card">
-                <div class="card__img">
+            <div class="main__blogCard">
+                <div class="main__blogCard--img">
                     <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail(); ?>
                     <?php else: ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/noimage.jpg" alt="画像準備中">
                     <?php endif; ?>
                 </div>
-                <div class="card__content">
+                <div class="main__blogCard--content">
                     <div class="card__meta">
                         <?php
                             $cat = get_the_category();

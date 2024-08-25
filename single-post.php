@@ -56,7 +56,7 @@
 
                         <div class="main__reration">
                             <h3 class="main__cardSubtitle">関連記事</h3>
-                            <ul class="blog__list">
+                            <ul class="main__blogList">
                                 <?php
                                 $categories = get_the_category($post->ID);
  
@@ -76,17 +76,17 @@
                                 if ( $the_query->have_posts() ) :
                                 ?>
                                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                                <li class="blog__item">
-                                    <a class="blog__anchor" href="<?php the_permalink(); ?>">
-                                        <div class="card">
-                                            <div class="card__img">
+                                <li class="main__blogItem">
+                                    <a class="main__anchor" href="<?php the_permalink(); ?>">
+                                        <div class="main__blogCard">
+                                            <div class="main__blogCard--img">
                                                 <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail(); ?>
                                                 <?php else: ?>
                                                     <img src="<?php echo get_template_directory_uri(); ?>/img/noimage.jpg" alt="画像準備中">
                                                 <?php endif; ?>
                                             </div>
-                                            <div class="card__content">
+                                            <div class="main__blogCard--content">
                                                 <div class="card__meta">
                                                     <?php
                                                         $cat = get_the_category();
@@ -110,7 +110,7 @@
 
                         <div class="main__popular">
                             <h3 class="main__cardSubtitle">人気記事</h3>
-                            <ul class="blog__list">
+                            <ul class="main__blogList">
                                 <?php
                                 $args = array(
                                     'post_type'      => 'post',
@@ -120,17 +120,17 @@
                                 if ( $the_query->have_posts() ) :
                                 ?>
                                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                                <li class="blog__item">
+                                <li class="main__blogItem ">
                                     <a class="blog__anchor" href="<?php the_permalink(); ?>">
-                                        <div class="card">
-                                            <div class="card__img">
+                                        <div class="main__blogCard">
+                                            <div class="main__blogCard--img">
                                                 <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail(); ?>
                                                 <?php else: ?>
                                                     <img src="<?php echo get_template_directory_uri(); ?>/img/noimage.jpg" alt="画像準備中">
                                                 <?php endif; ?>
                                             </div>
-                                            <div class="card__content">
+                                            <div class="main__blogCard--content">
                                                 <div class="card__meta">
                                                     <?php
                                                         $cat = get_the_category();

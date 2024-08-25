@@ -65,33 +65,29 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  font-size: clamp(1.4rem,(20/1440)*100vw,2.0rem);
+  font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
 }
 .card__category {
   background: $color-accent;
   border-radius: 2rem;
   color: $color-main;
-  display: inline-block;
-  font-size: clamp(1.2rem,(14/1440)*100vw,1.4rem);
   font-weight: 400;
   letter-spacing: 0.1em;
   padding: (5/360)*100% (14/360)*100%;
   text-align: center;
-  min-width: 10rem;
+  min-width: .8rem;
 }
 .card__date {
-  display: inline-block;
-  font-size: clamp(1.2rem,(14/1440)*100vw,1.4rem);
 }
 .card__head {
-  font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+  font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
   line-height: 1.5;
-  margin-top: (40/400)*100%;
+  margin-top: (24/400)*100%;
 }
 .card__more {
   border-top: 1px solid $color-titleBg1;
   font-family: $font-en;
-  font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+  font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
   margin-top: (12/400)*100%;
   text-align: right;
   padding-top: (12/400)*100%;
