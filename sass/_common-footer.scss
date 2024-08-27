@@ -14,6 +14,11 @@
     max-width: 144rem;
     padding: (80/1440)*100% 0 (40/1440)*100%;
     width: (1040/1440)*100vw;
+
+    @include mq('sp') {
+        margin: 0 auto ;
+      width: (335/375)*100vw;
+    }
 }
 .footer__content {
     align-items: start;
@@ -25,9 +30,13 @@
 }
 .footer__logo {
     font-family: $font-en;
-    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
+    font-size: clamp(2.8rem,(36/1440)*100vw,3.6rem);
     font-style: italic;
     width: fit-content;
+
+    @include mq('sp') {
+        font-size: clamp(2.0rem,(38/1440)*100vw,2.8rem);
+    }
 }
 .footer__textbox {
     margin-top: (80/420)*100%;
@@ -35,6 +44,10 @@
 }
 .footer__text {
     font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
+
+    @include mq('sp') {
+        font-size: clamp(1.0rem,(12/1440)*100vw,1.2rem);
+    }
 }
 .footer__right {
     font-family: $font-en;
@@ -43,6 +56,10 @@
 }
 .footer__list {
     font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
+
+    @include mq('sp') {
+        font-size: clamp(2.0rem,(38/1440)*100vw,2.8rem);
+    }
 }
 .footer__item {
     width: fit-content;
@@ -52,6 +69,62 @@
     }
 }
 .footer__copyright {
+    display: block;
+    margin-top: (200/1440)*100%;
+    text-align: center;
+}
+
+
+/* ===============================================
+# footer-works
+=============================================== */
+
+.footer-works {
+    background: linear-gradient(to bottom,#3F3F3F, #1A1A1A);
+    color: $color-main;
+}
+.footer-works__inner {
+    margin: 0 auto;
+    max-width: 144rem;
+    padding: (80/1440)*100% 0 (40/1440)*100%;
+    width: (1040/1440)*100vw;
+}
+.footer-works__content {
+    align-items: start;
+    display: flex;
+    font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
+}
+.footer-works__left {
+    width: 50%;
+}
+.footer-works__logo {
+    font-family: $font-en;
+    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
+    font-style: italic;
+    width: fit-content;
+}
+.footer-works__textbox {
+    margin-top: (80/420)*100%;
+    line-height: 1.5;
+}
+.footer-works__text {
+    font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+}
+.footer-works__right {
+    font-family: $font-en;
+    width: 50%;
+}
+.footer-works__list {
+    font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
+}
+.footer-works__item {
+    width: fit-content;
+
+    &:not(:nth-of-type(1)) {
+        margin-top: (80/520)*100%;
+    }
+}
+.footer-works__copyright {
     display: block;
     margin-top: (200/1440)*100%;
     text-align: center;

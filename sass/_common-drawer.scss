@@ -1,0 +1,82 @@
+@use "foundation/index" as *;
+
+/* ===============================================
+# drawer
+=============================================== */
+
+.drawer {
+    display: none;
+
+    @include mq('sp') {
+      display: block;
+      width: 6.4rem;
+      height: 6.4rem;
+      margin-left: auto;
+      position: relative;
+      z-index: 100;
+    }
+}
+.drawer__bar {
+    position: absolute;
+    content: "";
+}
+.drawer__bar1 {
+    top: 30%;
+    right: 0;
+    width: 80%;
+    height: 0.2rem;
+    background: $color-text;
+}
+.drawer__bar2 {
+    top: 50%;
+    right: 0;
+    width: 60%;
+    height: 0.2rem;
+    background: $color-text;
+}
+.drawer__bar3 {
+    top: 70%;
+    right: 0;
+    width: 40%;
+    height: 0.2rem;
+    background: $color-text;
+}
+
+.drawer__nav {
+    display: none;
+
+    @include mq('sp') {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 50;
+        display: block;
+        background: rgba(78, 161, 213, .9);
+        width: 80vw;
+        height: 100vh;
+        transform: translateX(100%);
+    }
+}
+.drawer__list {
+
+    @include mq('sp') {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: inherit;
+        color: $color-main;
+        font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
+        font-family: $font-en;
+    }
+}
+.drawer__item {
+
+    @include mq('sp') {
+        &:not(:nth-child(1)) {
+            margin-top: (40/300)*100vw;
+        }
+      
+    }
+
+}

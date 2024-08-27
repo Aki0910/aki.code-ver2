@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (i === index) {
                 gsap.to(dot, {
                     opacity: 1,
-                    backgroundColor: '#0068b7', // アクティブな色
+                    backgroundColor: '#4ea1d5', // アクティブな色
                     scale: 1.2, // 少し大きくする
                     duration: 1,
                     ease: 'power1.inOut'
@@ -245,4 +245,41 @@ function createMouseStalker(button, colorClass) {
     createMouseStalker(button, 'mouse-stalker-blue');
   });
   
+  
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('.toc_widget a');
+    const contentLinks = document.querySelectorAll('#toc_container a');
+
+    sidebarLinks.forEach((sidebarLink, index) => {
+        const correspondingContentLink = contentLinks[index];
+        if (correspondingContentLink) {
+            const contentHref = correspondingContentLink.getAttribute('href');
+            sidebarLink.setAttribute('href', contentHref);
+        }
+    });
+});
+
+
+// GSAPとスクロールイベントを使ってスクロール時にヘッダーの背景を変更する
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.getElementById("header");
+  
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 80) { // スクロール位置が50pxを超えたらクラスを追加
+        gsap.to(header, {
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          duration: 0.3,
+          ease: "power1.out"
+        });
+      } else { // スクロール位置が50px以下ならクラスを削除
+        gsap.to(header, {
+          backgroundColor: "rgba(255, 255, 255, 0)",
+          duration: 0.3,
+          ease: "power1.out"
+        });
+      }
+    });
+  });
   

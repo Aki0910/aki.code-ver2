@@ -14,7 +14,6 @@
     font-family: $font-ja;
     font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
     letter-spacing: 0.1em;
-    min-width: 40rem;
     min-height: 6.4rem;
     padding: (8/1000)*100%;
     width: 100%;
@@ -39,7 +38,7 @@
     margin-top: (80/1040)*100%;
 }
 .contact-form__text {
-    font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
+    font-size: clamp(1.0rem,(24/1440)*100vw,2.4rem);
 }
 
 .contact-form__wrap {
@@ -53,7 +52,7 @@
 
 .contact-form__label {
     color: $color-text;
-    font-size: clamp(1.8px,(24/1440)*100vw,2.4rem);
+    font-size: clamp(1.6rem,(24/1440)*100vw,2.4rem);
     width: fit-content;
 
     &:not(:first-child) {
@@ -66,6 +65,11 @@
     width: (600/1440)*100vw;
     min-width: 40rem;
 
+    @include mq('sp') {
+      min-width: 0;
+      max-width: 50rem;
+      width: 100%;
+    }
 }
 
 [type="text"],
@@ -78,6 +82,11 @@ textarea {
     max-height: 20rem;
     resize: none;
     width: (600/1440)*100vw;
+
+    @include mq('sp') {
+        max-width: 50rem;
+        width: 100%;
+    }
 }
 
 [type="submit"] {
@@ -88,6 +97,7 @@ textarea {
     color: inherit;
     background: none;
     line-height: inherit;
+    font-size: clamp(1.6rem,(16/1440)*100vw,1.6rem);
 }
 
 .contact-form__button {

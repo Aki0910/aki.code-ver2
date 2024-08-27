@@ -5,20 +5,29 @@
 =============================================== */
 
 .profile {
+
+    @include mq('sp') {
+      margin-top: (240/375)*100%;
+    }
 }
 .profile__inner {
     margin-left: (200/1440)*100%;
     width: (680/1440)*100vw;
+
+    @include mq('sp') {
+        margin: 0 auto;
+        width: (335/375)*100vw;
+    }
 }
 .profile__list {
 }
 .profile__name {
     font-family: $font-en;
-    font-size: clamp(2.0rem,(28/1440)*100vw,2.8rem);
+    font-size: clamp(1.6rem,(28/1440)*100vw,2.8rem);
     font-weight: 700;
 }
 .profile__hobby {
-    font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
+    font-size: clamp(1.2rem,(20/1440)*100vw,2.0rem);
     margin-top: (56/645)*100%;
 }
 .profile__desxcription {
@@ -35,5 +44,6 @@
 }
 .sns__item {
     margin: 0 (20/645)*100%;
+    min-width: 2.4rem;
     width: (40/1440)*100vw;
 }

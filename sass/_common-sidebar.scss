@@ -16,7 +16,6 @@
 
 #block-8 {
     padding-left: (80/360)*100%;
-    position: relative;
 
         a {
         width: fit-content;
@@ -34,8 +33,10 @@
             position: absolute;
             content: "";
             background: url(./img/pc-icon.png) no-repeat center center / cover;
-            width: 2.4rem;
-            height: 2.4rem;
+            width: (24/1440)*100vw;
+            max-width: 2.4rem;
+            height: (24/1440)*100vw;
+            max-height:2.4rem;
             top: 50%;
             left: -(60/280)*100%;
             transform: translateY(-50%);
@@ -49,8 +50,10 @@
             position: absolute;
             content: "";
             background: url(./img/seo-icon.png) no-repeat center center / cover;
-            width: 2.4rem;
-            height: 2.4rem;
+            width: (24/1440)*100vw;
+            max-width: 2.4rem;
+            height: (24/1440)*100vw;
+            max-height:2.4rem;
             top: 50%;
             left: -(60/280)*100%;
             transform: translateY(-50%);
@@ -64,8 +67,10 @@
             position: absolute;
             content: "";
             background: url(./img/marketing-icon.png) no-repeat center center / cover;
-            width: 2.4rem;
-            height: 2.4rem;
+            width: (24/1440)*100vw;
+            max-width: 2.4rem;
+            height: (24/1440)*100vw;
+            max-height:2.4rem;
             top: 50%;
             left: -(60/280)*100%;
             transform: translateY(-50%);
@@ -109,7 +114,7 @@
 
 #block-21,
 #block-22 {
-    margin: (40/360)*100% auto;
+    margin: (80/360)*100% auto (40/360)*100%;
 }
 
 #block-23 {
@@ -123,12 +128,30 @@
             text-decoration: underline;
         }
     }
+
+    li {
+        position: relative;
+        margin-top: (20/360)*100%;
+    
+        &::before {
+            position: absolute;
+            content: "";
+            background: url(./img/archive-icon.png) no-repeat center center / cover;
+            width: (24/1440)*100vw;
+            max-width: 2.4rem;
+            height: (24/1440)*100vw;
+            max-height:2.4rem;
+            top: 50%;
+            left: -(60/280)*100%;
+            transform: translateY(-50%);
+        }
+    }
 }
 
 #block-27{
-    margin: (40/360)*100% (10/360)*100%;
+    margin: (80/360)*100% (10/360)*100% (40/360)*100%;
     position: sticky;
-    top: 4rem;
+    top: 8rem;
 }
 
 #block-31 {

@@ -17,6 +17,10 @@
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: 0;
+
+  @include mq('sp') {
+    display: none;
+  }
 }
 .mouse-stalker-white {
   background: $color-main;

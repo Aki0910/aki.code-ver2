@@ -23,12 +23,24 @@
 }
 .blog__content {
   margin-top: (120/1440)*100vw;
+
+  @include mq('sp') {
+    max-width: 50rem;
+    margin: (40/375)*100% auto 0;
+  }
+
 }
 
 .blog__list {
   margin-left: auto;
   width: (700/1440)*100vw;
   min-width: 60rem;
+
+  @include mq('sp') {
+    min-width: 0;
+    width: 100%;
+  }
+  
 }
 .blog__item {
   background: $color-main;
@@ -52,14 +64,28 @@
   align-items: center;
   display: flex;
   border: 1px solid rgba(26, 26, 26, .3);
+
+  @include mq('sp') {
+    display: block;
+  }
 }
 .card__img {
   width: (300/1440)*100vw;
   min-width: 25rem;
+
+  @include mq('sp') {
+    min-width: 0;
+    width: inherit;
+  }
 }
 .card__content {
   padding: (20/700)*100% (20/700)*100% (12/700)*100%;
   width: calc(100% - (300/1440)*100vw);
+
+  @include mq('sp') {
+    padding: (24/335)*100% (10/335)*100%;
+    width: 100%;
+  }
 }
 .card__meta {
   align-items: center;
