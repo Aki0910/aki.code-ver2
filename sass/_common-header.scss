@@ -59,6 +59,16 @@
     background: #3f3f3f;
     color: $color-main;
     padding: (40/1440)*100% (80/1440)*100%;
+
+    @include mq('sp') {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 0 (80/1440)*100%;
+        background: rgba(63, 63, 63, .8);
+      }
 }
 
 .header-works__inner {
@@ -74,6 +84,10 @@
 }
 .header-works__nav {
     margin-left: auto;
+
+    @include mq('sp') {
+        display: none;
+      }
 }
 .header-works__list {
     align-items: center;

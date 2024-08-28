@@ -9,6 +9,11 @@
     margin-top: (80/360)*100%;
     padding: (35/360)*100% (30/360)*100%;
     position: relative;
+
+    @include mq('sp') {
+      margin-top: (40/360)*100%;
+      padding: (16/360)*100% (16/360)*100%;
+    }
   }
    
   .wp-block-search__inside-wrapper  {
@@ -17,6 +22,11 @@
       padding: (20/360)*100%;
       min-height: 8rem;
       width: 100%;
+
+      @include mq('sp') {
+        min-height: 4rem;
+        padding: (12/360)*100%;
+      }
   }
   .wp-block-search__input {
     padding: 0;

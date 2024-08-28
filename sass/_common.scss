@@ -100,9 +100,9 @@ img {
   border-radius: 50%;
   border: 2px solid $color-accent;
   color: $color-accent;
-  width: (200/1440)*100vw;
   min-width: 12rem;
   min-height: 12rem;
+  width: (200/1440)*100vw;
   height: (200/1440)*100vw;
   position: relative;
   margin-top: (80/1440)*100vw;
@@ -113,6 +113,11 @@ img {
 
   @include mq('sp') {
     margin-top: (40/375)*100vw;
+  }
+
+  @include mq('sp') {
+    min-width: 10rem;
+    min-height: 10rem;
   }
 }
 .button__content {
@@ -129,7 +134,7 @@ img {
 }
 .button__text {
   font-family: $font-en;
-  font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
+  font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);
   line-height: 1.5;
   text-align: center;
 }

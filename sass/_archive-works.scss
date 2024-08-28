@@ -22,19 +22,30 @@
   max-width: 144rem;
   padding: (216/1440)*100% 0 (120/1440)*100%;
   width: (1040/1440)*100vw;
+
+  @include mq('sp') {
+    padding: (80/375)*100% 0 (80/375)*100%;
+
+  }
 }
 
 .archive-works__content {
   width: 100%;
-  margin-top: (80/1440)*100vw;
+  margin-top: (80/1440)*100%;
 
+  @include mq('sp') {
+    margin-top: (80/375)*100%;
+  }
 }
 
 .archive-works__list {
-
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+
+  @include mq('sp') {
+    display: block;
+  }
 }
 .archive-works__item {
   color: $color-main;
@@ -42,9 +53,27 @@
   
   &:nth-child(2n){
     margin-left: (80/1040)*100%;
+
+    @include mq('sp') {
+      margin-left: auto;
+    }
   }
   &:nth-child(n + 3){
     margin-top: (120/1040)*100%;
+
+    @include mq('sp') {
+      margin-top: auto;
+    }
+  }
+
+  @include mq('sp') {
+    margin: 0 auto;
+    max-width: 50rem;
+    width: inherit;
+
+    &:not(:nth-child(1)) {
+      margin-top: (80/375)*100%;
+    }
   }
 }
 .archive-works__img {

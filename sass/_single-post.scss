@@ -5,11 +5,19 @@
     display: flex;
     justify-content: space-between;
     margin: (120/1440)*100% (80/1440)*100%;
+
+    @include mq('sp') {
+      display: block;
+    }
 }
 .main {
     background: $color-main;
     padding: (176/1280)*100% (40/1280)*100% ;
     width: (800/1440)*100vw;
+
+    @include mq('sp') {
+      width: 100%;
+    }
 }
 .main__card {
 
@@ -37,6 +45,11 @@
 .main__card--title {
     font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
     line-height: 1.5;
+
+    @include mq('sp') {
+      font-size: clamp(2.4rem,(28/375)*100vw,2.8rem);
+
+    }
 }
 .main__card--meta {
     align-items: center;
@@ -46,6 +59,10 @@
 }
 .main__card--date {
     font-size: clamp(1.2rem,(14/1440)*100vw,1.4rem);
+
+    @include mq('sp') {
+      width: (160/375)*100vw;
+    }
 }
 .main__card--img {
     margin-top: (40/720)*100%;
@@ -72,6 +89,10 @@
 .main__blogList {
   width: (700/1440)*100vw;
 
+  @include mq('sp') {
+    width: 100%;
+  }
+
 }
 .main__blogItem {
   background: $color-main;
@@ -95,9 +116,17 @@
 .main__blogCard--img {
   margin: 0;
   width: (300/1440)*100vw;
+
+  @include mq('sp') {
+    width: (150/375)*100vw;
+  }
 }
 .main__blogCard--content {
   padding: (10/720)*100% ;
   width: calc(100% - (300/1440)*100vw);
+
+  @include mq('sp') {
+    width: calc(100% - (150/375)*100vw);
+  }
 }
   

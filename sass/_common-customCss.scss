@@ -5,7 +5,11 @@
 =============================================== */
 
 %my-class-base {
-    font-size: clamp(1.2rem,(18/1440)*100vw,1.8rem);
+    font-size: clamp(1.4rem,(18/1440)*100vw,1.8rem);
+
+    @include mq('sp') {
+        font-size: clamp(1.4rem,(16/375)*100vw,1.6rem);
+    }
 }
 .my-class__paragraph {
     @extend %my-class-base;
@@ -24,6 +28,10 @@
     padding-left: 4rem;
     position: relative;
 
+    @include mq('sp') {
+        font-size: clamp(2.4rem,(28/375)*100vw,2.8rem);
+    }
+
     &::before {
         position: absolute;
         content: "";
@@ -41,6 +49,10 @@
     line-height: 1.5;
     padding-left: 4rem;
     position: relative;
+
+    @include mq('sp') {
+        font-size: clamp(1.6rem,(20/375)*100vw,2.0rem);
+    }
 
     &::before {
         position: absolute;
@@ -61,6 +73,10 @@
     margin: (40/720)*100% 0;
     line-height: 2;
     width: fit-content;
+
+    @include mq('sp') {
+        font-size: clamp(1.4rem,(16/375)*100vw,1.6rem);
+    }
 }
 .my-class__heading6 {
 

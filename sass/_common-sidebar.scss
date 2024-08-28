@@ -12,12 +12,21 @@
     padding: (80/1280)*100% 0;
     width: (360/1440)*100vw;
     height: inherit;
+
+    @include mq('sp') {
+      width: 100%;
+    }
 }
 
 #block-8 {
     padding-left: (80/360)*100%;
 
-        a {
+    @include mq('sp') {
+        font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
+
+    }
+
+    a {
         width: fit-content;
         
         &:hover {
@@ -26,13 +35,12 @@
         }
     }
 
-    li:nth-child(1) {
+    li {
         position: relative;
-    
+
         &::before {
             position: absolute;
             content: "";
-            background: url(./img/pc-icon.png) no-repeat center center / cover;
             width: (24/1440)*100vw;
             max-width: 2.4rem;
             height: (24/1440)*100vw;
@@ -40,46 +48,43 @@
             top: 50%;
             left: -(60/280)*100%;
             transform: translateY(-50%);
+
+            @include mq('sp') {
+                width: (16/375)*100vw;
+                height: (16/375)*100vw;
+                left: -(40/280)*100%;
+            }
+        }
+    }
+
+    li:nth-child(1) {
+    
+        &::before {
+            background: url(./img/pc-icon.png) no-repeat center center / cover;
         }
     }
     li:nth-child(2) {
-        position: relative;
         margin-top: (20/360)*100%;
     
         &::before {
-            position: absolute;
-            content: "";
             background: url(./img/seo-icon.png) no-repeat center center / cover;
-            width: (24/1440)*100vw;
-            max-width: 2.4rem;
-            height: (24/1440)*100vw;
-            max-height:2.4rem;
-            top: 50%;
-            left: -(60/280)*100%;
-            transform: translateY(-50%);
         }
     }
     li:nth-child(3) {
-        position: relative;
         margin-top: (20/360)*100%;
     
         &::before {
-            position: absolute;
-            content: "";
             background: url(./img/marketing-icon.png) no-repeat center center / cover;
-            width: (24/1440)*100vw;
-            max-width: 2.4rem;
-            height: (24/1440)*100vw;
-            max-height:2.4rem;
-            top: 50%;
-            left: -(60/280)*100%;
-            transform: translateY(-50%);
         }
     }
 }
 #block-9 {
     img {
         width: (240/1440)*100vw;
+
+        @include mq('sp') {
+          width: (160/375)*100vw;
+        }
     }
 }
 
@@ -115,6 +120,14 @@
 #block-21,
 #block-22 {
     margin: (80/360)*100% auto (40/360)*100%;
+
+    h3 {
+        font-size: clamp(2.0rem,(24/375)*100vw,2.4rem);
+    }
+
+    @include mq('sp') {
+        margin: (40/360)*100% auto (20/360)*100%;
+    }
 }
 
 #block-23 {
@@ -144,6 +157,12 @@
             top: 50%;
             left: -(60/280)*100%;
             transform: translateY(-50%);
+
+            @include mq('sp') {
+              width: (16/375)*100vw;
+              height: (16/375)*100vw;
+              left: -(40/280)*100%;
+            }
         }
     }
 }
@@ -152,6 +171,10 @@
     margin: (80/360)*100% (10/360)*100% (40/360)*100%;
     position: sticky;
     top: 8rem;
+
+    @include mq('sp') {
+      display: none;
+    }
 }
 
 #block-31 {

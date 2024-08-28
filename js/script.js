@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", function () {
       if (window.scrollY > 80) { // スクロール位置が50pxを超えたらクラスを追加
         gsap.to(header, {
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
           duration: 0.3,
           ease: "power1.out"
         });

@@ -18,6 +18,11 @@
 	transition: all .4s ease 0s;
 	width: 45%;
 
+	@include mq('sp') {
+		min-height: 12rem;
+	  	width: 50%;
+	}
+
 	&:nth-child(1) {
 		border-right: .2rem solid $color-titleBg1;
 	}

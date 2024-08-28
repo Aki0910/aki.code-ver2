@@ -9,7 +9,7 @@
     margin: 0 auto ;
 
     @include mq('sp') {
-      margin-top: (240/375)*100%;
+      margin-top: (80/375)*100%;
     }
 }
 .profile__inner {

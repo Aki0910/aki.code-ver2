@@ -17,7 +17,7 @@
 
     @include mq('sp') {
         margin: 0 auto ;
-      width: (335/375)*100vw;
+        width: (335/375)*100vw;
     }
 }
 .footer__content {
@@ -31,7 +31,6 @@
 .footer__logo {
     font-family: $font-en;
     font-size: clamp(2.8rem,(36/1440)*100vw,3.6rem);
-    font-style: italic;
     width: fit-content;
 
     @include mq('sp') {
@@ -88,20 +87,36 @@
     max-width: 144rem;
     padding: (80/1440)*100% 0 (40/1440)*100%;
     width: (1040/1440)*100vw;
+
+    @include mq('sp') {
+        margin: 0 auto ;
+        width: (335/375)*100vw;
+    }
 }
 .footer-works__content {
     align-items: start;
     display: flex;
     font-size: clamp(3.2rem,(40/1440)*100vw,4rem);
+
+    @include mq('sp') {
+      justify-content: space-between;
+    }
 }
 .footer-works__left {
     width: 50%;
+
+    @include mq('sp') {
+      width: 45%;
+    }
 }
 .footer-works__logo {
     font-family: $font-en;
     font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
-    font-style: italic;
     width: fit-content;
+
+    @include mq('sp') {
+        font-size: clamp(2.0rem,(38/1440)*100vw,2.8rem);
+    }
 }
 .footer-works__textbox {
     margin-top: (80/420)*100%;
@@ -109,13 +124,25 @@
 }
 .footer-works__text {
     font-size: clamp(1.4rem,(16/1440)*100vw,1.6rem);
+
+    @include mq('sp') {
+        font-size: clamp(1.0rem,(12/1440)*100vw,1.2rem);
+    }
 }
 .footer-works__right {
     font-family: $font-en;
     width: 50%;
+
+    @include mq('sp') {
+        width: 45%;
+    }
 }
 .footer-works__list {
     font-size: clamp(2.8rem,(40/1440)*100vw,3.6rem);
+
+    @include mq('sp') {
+        font-size: clamp(2.0rem,(38/1440)*100vw,2.8rem);
+    }
 }
 .footer-works__item {
     width: fit-content;
