@@ -5,13 +5,16 @@
 =============================================== */
 
 .profile {
+    max-width: 144rem;
+    margin: 0 auto ;
 
     @include mq('sp') {
       margin-top: (240/375)*100%;
     }
 }
 .profile__inner {
-    margin-left: (200/1440)*100%;
+    margin: 0 auto 0 (200/1440)*100%;
+    max-width: 68rem;
     width: (680/1440)*100vw;
 
     @include mq('sp') {

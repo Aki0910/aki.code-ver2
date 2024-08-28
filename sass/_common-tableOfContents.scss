@@ -92,7 +92,7 @@
     content: "0" counter(li) " |";
     position: absolute;
     font-size: clamp(.8rem,(14/1440)*100vw,1.4rem);
-    left: -(40/265)*100%;
+    left: -(32/265)*100%;
     top: 0;
     color: $color-accent;
 }

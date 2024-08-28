@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         items.forEach(item => {
             gsap.to(item, {
                 autoAlpha: 1,
-                duration: 1.5,
-                delay: Math.random() * 2 // ランダムなディレイ
+                duration: 2.0,
+                delay: Math.random() * 2.5 // ランダムなディレイ
             });
         });
     }

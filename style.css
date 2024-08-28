@@ -802,7 +802,7 @@ img {
   content: "0" counter(li) " |";
   position: absolute;
   font-size: clamp(0.8rem, 0.9722222222vw, 1.4rem);
-  left: -15.0943396226%;
+  left: -12.0754716981%;
   top: 0;
   color: #4ea1d5;
 }
@@ -1571,6 +1571,10 @@ img {
 /* ===============================================
 # top-profile
 =============================================== */
+.profile {
+  max-width: 144rem;
+  margin: 0 auto;
+}
 @media (max-width: 767px) {
   .profile {
     margin-top: 64%;
@@ -1578,7 +1582,8 @@ img {
 }
 
 .profile__inner {
-  margin-left: 13.8888888889%;
+  margin: 0 auto 0 13.8888888889%;
+  max-width: 68rem;
   width: 47.2222222222vw;
 }
 @media (max-width: 767px) {
