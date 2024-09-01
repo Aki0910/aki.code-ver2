@@ -18,7 +18,7 @@
     }
 }
 
-#block-8 {
+#block-32 {
     padding-left: (80/360)*100%;
 
     @include mq('sp') {
@@ -60,14 +60,14 @@
     li:nth-child(1) {
     
         &::before {
-            background: url(./img/pc-icon.png) no-repeat center center / cover;
+            background: url(./img/seo-icon.png) no-repeat center center / cover;
         }
     }
     li:nth-child(2) {
         margin-top: (20/360)*100%;
-    
+        
         &::before {
-            background: url(./img/seo-icon.png) no-repeat center center / cover;
+            background: url(./img/pc-icon.png) no-repeat center center / cover;
         }
     }
     li:nth-child(3) {

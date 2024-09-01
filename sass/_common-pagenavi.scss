@@ -14,14 +14,14 @@
 	color: #77a0d1;
 }
 .wp-pagenavi a {
-    color: $color-main;
+    color: $color-accent;
 }
 .wp-pagenavi span.current,
 .wp-pagenavi a.page {
 	align-items: center;
 	display: flex;
 	justify-content: center;
-    border: solid 1px $color-main;
+    border: solid 1px $color-accent;
 	border-radius: 50%;
 	text-align: center;
 	transition: all .3s ease 0s;
@@ -35,7 +35,7 @@
     color: $color-main;
 }
 .wp-pagenavi a.page {
-	background: none;
+	background: $color-main;
 }
 .wp-pagenavi a.page:hover {
     background: $color-accent;

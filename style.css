@@ -601,7 +601,7 @@ img {
 }
 
 .wp-pagenavi a {
-  color: #fff;
+  color: #4ea1d5;
 }
 
 .wp-pagenavi span.current,
@@ -615,7 +615,7 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: solid 1px #fff;
+  border: solid 1px #4ea1d5;
   border-radius: 50%;
   text-align: center;
   -webkit-transition: all 0.3s ease 0s;
@@ -632,7 +632,7 @@ img {
 }
 
 .wp-pagenavi a.page {
-  background: none;
+  background: #fff;
 }
 
 .wp-pagenavi a.page:hover {
@@ -888,27 +888,27 @@ img {
   }
 }
 
-#block-8 {
+#block-32 {
   padding-left: 22.2222222222%;
 }
 @media (max-width: 767px) {
-  #block-8 {
+  #block-32 {
     font-size: clamp(1.6rem, 1.3888888889vw, 2rem);
   }
 }
-#block-8 a {
+#block-32 a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-#block-8 a:hover {
+#block-32 a:hover {
   color: #4ea1d5;
   text-decoration: underline;
 }
-#block-8 li {
+#block-32 li {
   position: relative;
 }
-#block-8 li::before {
+#block-32 li::before {
   position: absolute;
   content: "";
   width: 1.6666666667vw;
@@ -921,25 +921,25 @@ img {
           transform: translateY(-50%);
 }
 @media (max-width: 767px) {
-  #block-8 li::before {
+  #block-32 li::before {
     width: 4.2666666667vw;
     height: 4.2666666667vw;
     left: -14.2857142857%;
   }
 }
-#block-8 li:nth-child(1)::before {
-  background: url(./img/pc-icon.png) no-repeat center center/cover;
-}
-#block-8 li:nth-child(2) {
-  margin-top: 5.5555555556%;
-}
-#block-8 li:nth-child(2)::before {
+#block-32 li:nth-child(1)::before {
   background: url(./img/seo-icon.png) no-repeat center center/cover;
 }
-#block-8 li:nth-child(3) {
+#block-32 li:nth-child(2) {
   margin-top: 5.5555555556%;
 }
-#block-8 li:nth-child(3)::before {
+#block-32 li:nth-child(2)::before {
+  background: url(./img/pc-icon.png) no-repeat center center/cover;
+}
+#block-32 li:nth-child(3) {
+  margin-top: 5.5555555556%;
+}
+#block-32 li:nth-child(3)::before {
   background: url(./img/marketing-icon.png) no-repeat center center/cover;
 }
 
