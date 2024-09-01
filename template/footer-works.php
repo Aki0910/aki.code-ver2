@@ -21,3 +21,8 @@
         <small class="footer-works__copyright">&copy; 2024 Aki.code All rights reserved</small>
       </div>
     </footer>
+    <div class="to-top">
+        <div class="to-top__img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/img/to-top.png')); ?>" alt="トップへ戻る">
+        </div>
+    </div>

@@ -1,14 +1,12 @@
 
-
 document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Worksセクションのアニメーション
     const contentEl = document.querySelector('.works__content');
     const listEl = document.querySelector('.works__list');
-    const worksSection = document.querySelector('.works');
-
-    gsap.registerPlugin(ScrollTrigger);
     
     if (contentEl && listEl) {
-
         let xValue;
         let shouldAnimate = true;
 
@@ -37,33 +35,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-
+    // 画像のフェードインアニメーション
     const items = document.querySelectorAll('.top__item');
-    
-    // 画像がすべて読み込まれるのを待つ
     let loadedImagesCount = 0;
     const totalImages = items.length;
 
     items.forEach(item => {
         const img = item.querySelector('img');
-        img.onload = () => {
-            loadedImagesCount++;
-            if (loadedImagesCount === totalImages) {
-                startFadeInAnimation();
-            }
-        };
+        img.onload = handleImageLoad;
+        img.onerror = handleImageLoad; // エラー処理も追加
 
-        // キャッシュされた画像をサポートするために、以下のようにしています
+        // キャッシュされた画像をサポートするために
         if (img.complete) {
             img.onload();
         }
     });
 
+    function handleImageLoad() {
+        loadedImagesCount++;
+        if (loadedImagesCount === totalImages) {
+            startFadeInAnimation();
+        }
+    }
+
     function startFadeInAnimation() {
-        // 画像を一旦透明にしておく
         gsap.set(items, { autoAlpha: 0 });
 
-        // 画像をランダムな順番でフェードイン
         items.forEach(item => {
             gsap.to(item, {
                 autoAlpha: 1,
@@ -73,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // FadeInUpアニメーション
     document.querySelectorAll('.js-fadeInUp').forEach(fadeInUp => {
         gsap.to(fadeInUp, {
           duration: 1.5,
@@ -81,174 +79,141 @@ document.addEventListener('DOMContentLoaded', function() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: fadeInUp,
-            start: "top 80%", // 各テキスト要素が画面の中央に来たら発火
+            start: "top 80%", 
             toggleActions: "play none none none",
           }
         });
-      });
-
-
-    gsap.utils.toArray('.works__item').forEach((item, index) => {
-    gsap.timeline({
-        scrollTrigger: {
-        trigger: item,
-        start: "top 70%", // Trigger the animation when the top of the item reaches the center of the viewport
-        toggleActions: "play none none reverse", // Play animation when entering, and reverse when leaving
-        }
-    })
-    .to(item.querySelector('.works__img img'), { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.8, 
-        delay: index * 0.8, // 各アイテムに対する遅延
-        ease: "power1.inOut" // イージングを指定
     });
+
+    // Worksセクションのアイテムごとのアニメーション
+    gsap.utils.toArray('.works__item').forEach((item, index) => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: item,
+                start: "top 70%", 
+                toggleActions: "play none none reverse", 
+            }
+        })
+        .to(item.querySelector('.works__img img'), { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.8, 
+            delay: index * 0.8, 
+            ease: "power1.inOut" 
+        });
     });
 
     gsap.utils.toArray('.archive-works__item').forEach((item) => {
-    gsap.timeline({
-        scrollTrigger: {
-        trigger: item,
-        start: "top 80%", // Trigger the animation when the top of the item reaches the center of the viewport
-        toggleActions: "play none none reverse", // Play animation when entering, and reverse when leaving
-        }
-    })
-    .to(item.querySelector('.archive-works__img img'), { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1, 
-        ease: "power1.inOut", // イージングを指定
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: item,
+                start: "top 80%", 
+                toggleActions: "play none none reverse", 
+            }
+        })
+        .to(item.querySelector('.archive-works__img img'), { 
+            opacity: 1, 
+            y: 0, 
+            duration: 1, 
+            ease: "power1.inOut", 
+        });
     });
-    });
 
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
+    // スライダー機能
     const slides = document.querySelectorAll('.slider__img');
     const navDots = document.querySelectorAll('.slider__nav-dot');
     let currentIndex = 0;
     const totalSlides = slides.length;
     let interval;
-    let isAnimating = false;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            if (i === index) {
-                gsap.to(slide, { opacity: 1, duration: 1, ease: 'power1.inOut' });
-                slide.classList.add('active');
-            } else {
-                gsap.to(slide, { opacity: 0, duration: 1, ease: 'power1.inOut' });
-                slide.classList.remove('active');
-            }
+            gsap.to(slide, { 
+                opacity: i === index ? 1 : 0, 
+                duration: 1, 
+                ease: 'power1.inOut' 
+            });
+            slide.classList.toggle('active', i === index);
         });
 
         navDots.forEach((dot, i) => {
-            if (i === index) {
-                gsap.to(dot, {
-                    opacity: 1,
-                    backgroundColor: '#4ea1d5', // アクティブな色
-                    scale: 1.2, // 少し大きくする
-                    duration: 1,
-                    ease: 'power1.inOut'
-                });
-            } else {
-                gsap.to(dot, {
-                    opacity: 0.5,
-                    backgroundColor: '#fff', // デフォルトの色
-                    scale: 1,
-                    duration: 1,
-                    ease: 'power1.inOut'
-                });
-            }
+            gsap.to(dot, {
+                opacity: i === index ? 1 : 0.5,
+                backgroundColor: i === index ? '#4ea1d5' : '#fff',
+                scale: i === index ? 1.2 : 1,
+                duration: 1,
+                ease: 'power1.inOut'
+            });
         });
     }
 
     function nextSlide() {
-        if (!isAnimating) {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            showSlide(currentIndex);
-        }
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
     }
 
     function startSlider() {
-        interval = setInterval(nextSlide, 3000); // スライドを3秒ごとに切り替え
+        interval = setInterval(nextSlide, 3000);
     }
 
     function stopSlider() {
-        clearInterval(interval); // スライダーの自動切り替えを停止
+        clearInterval(interval);
     }
 
     function resumeSlider() {
-        startSlider(); // 自動切り替えを再開
+        startSlider();
     }
 
-    // 初期スライドとナビゲーションを表示
     showSlide(currentIndex);
-    startSlider(); // スライダーの自動切り替えを開始
+    startSlider();
 
-    // ナビゲーションボタンのクリックイベント
     navDots.forEach(dot => {
         dot.addEventListener('click', () => {
-            stopSlider(); // スライダーの自動切り替えを停止
-
+            stopSlider();
             const index = parseInt(dot.getAttribute('data-index'));
             currentIndex = index;
             showSlide(currentIndex);
-
-            // クリック後に2秒間の停止を行い、その後にスライダーの自動切り替えを再開
-            setTimeout(() => {
-                resumeSlider(); // 自動切り替えを再開
-            }, 2000); // 2秒間の停止
+            setTimeout(resumeSlider, 2000);
         });
     });
 
-});
+    // マウスストーカー
+    function createMouseStalker(button, colorClass) {
+        const stalker = document.createElement('div');
+        stalker.className = `mouse-stalker ${colorClass}`;
+        button.appendChild(stalker);
 
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-// 共通の関数を作成
-function createMouseStalker(button, colorClass) {
-    const stalker = document.createElement('div');
-    stalker.className = `mouse-stalker ${colorClass}`;
-    button.appendChild(stalker);
-  
-    button.addEventListener('mousemove', (e) => {
-      const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-  
-      gsap.to(stalker, {
-        x: x,
-        y: y,
-        opacity: 0.5,
-        duration: 0.3,
-        ease: "power1.out"
-      });
+            gsap.to(stalker, {
+                x: x,
+                y: y,
+                opacity: 0.5,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+        });
+
+        button.addEventListener('mouseleave', () => {
+            gsap.to(stalker, {
+                opacity: 0,
+                duration: 0.3
+            });
+        });
+    }
+
+    document.querySelectorAll('.button__white').forEach(button => {
+        createMouseStalker(button, 'mouse-stalker-white');
     });
-  
-    button.addEventListener('mouseleave', () => {
-      gsap.to(stalker, {
-        opacity: 0,
-        duration: 0.3
-      });
+
+    document.querySelectorAll('.button__blue').forEach(button => {
+        createMouseStalker(button, 'mouse-stalker-blue');
     });
-  }
-  
-  // 白色マウスストーカーを作成するボタン
-  document.querySelectorAll('.button__white').forEach(button => {
-    createMouseStalker(button, 'mouse-stalker-white');
-  });
-  
-  // 青色マウスストーカーを作成するボタン
-  document.querySelectorAll('.button__blue').forEach(button => {
-    createMouseStalker(button, 'mouse-stalker-blue');
-  });
-  
-  
 
-
-  document.addEventListener('DOMContentLoaded', function() {
+    // サイドバーリンクの設定
     const sidebarLinks = document.querySelectorAll('.toc_widget a');
     const contentLinks = document.querySelectorAll('#toc_container a');
 
@@ -259,27 +224,36 @@ function createMouseStalker(button, colorClass) {
             sidebarLink.setAttribute('href', contentHref);
         }
     });
+
+    // ヘッダーの背景変更
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", function () {
+        const backgroundColor = window.scrollY > 80 ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 0)";
+        gsap.to(header, {
+            backgroundColor: backgroundColor,
+            duration: 0.3,
+            ease: "power1.out"
+        });
+    });
 });
 
 
-// GSAPとスクロールイベントを使ってスクロール時にヘッダーの背景を変更する
-document.addEventListener("DOMContentLoaded", function () {
-    const header = document.getElementById("header");
-  
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 80) { // スクロール位置が50pxを超えたらクラスを追加
-        gsap.to(header, {
-          backgroundColor: "rgba(255, 255, 255, 0.9)",
-          duration: 0.3,
-          ease: "power1.out"
-        });
-      } else { // スクロール位置が50px以下ならクラスを削除
-        gsap.to(header, {
-          backgroundColor: "rgba(255, 255, 255, 0)",
-          duration: 0.3,
-          ease: "power1.out"
-        });
-      }
-    });
+
+const toTop = document.querySelector('.to-top');
+const windowHeight = window.outerHeight
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 700) {
+    toTop.classList.add('js-fadeIn')
+  } else {
+    toTop.classList.remove('js-fadeIn')
+  }
+});
+
+toTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
   });
-  
+});

@@ -1,38 +1,32 @@
 <?php
 
 /*
-* <title>タグを出力する
-*/
+ * <title>タグを出力する
+ */
 add_theme_support('title-tag');
 
 /**
- * 自作css読み込み
+ * 自作CSSの読み込み
  */
 function my_enqueue_styles() {
-    wp_enqueue_style('style',get_stylesheet_uri(),array(),false,'all');
+    wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0', 'all'); // バージョン番号を追加
 }
-add_action('wp_enqueue_scripts','my_enqueue_styles');
-
+add_action('wp_enqueue_scripts', 'my_enqueue_styles');
 
 /**
- * 自作JavaScript読み込み
+ * 自作JavaScriptの読み込み
  */
 function st_enqueue_scripts() {
     // The core GSAP library
-    wp_enqueue_script( 'gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), null, true );
-    
+    wp_enqueue_script('gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', true);
+
     // ScrollTrigger - with gsap.js passed as a dependency
-    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap-js'), null, true );
+    wp_enqueue_script('gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap-js'), '3.12.5', true);
 
     // Your main script file
-    wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array('gsap-st'), null, true );
-
-    // Your animation code file - with gsap.js passed as a dependency
-    // wp_enqueue_script( 'gsap-js2', get_template_directory_uri() . '/js/app.js', array('script'), null, true );
+    wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('gsap-st'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'st_enqueue_scripts');
-
-
 
 /**
  * アイキャッチ画像
@@ -47,8 +41,7 @@ add_theme_support('menus');
 /**
  * 投稿のアーカイブページを作成する
  */
-function post_has_archive($args, $post_type)
-{
+function post_has_archive($args, $post_type) {
     if ('post' == $post_type) {
         $args['rewrite'] = true; // リライトを有効にする
         $args['has_archive'] = 'post'; // 任意のスラッグ名
@@ -58,19 +51,18 @@ function post_has_archive($args, $post_type)
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 /**
- * contact form 7 の整形off
+ * Contact Form 7 の整形オフ
  */
-add_filter('wpcf7_autop_or_not','my_wpcf7_autop');
-function my_wpcf7_autop(){
+add_filter('wpcf7_autop_or_not', function() {
     return false;
-}
+});
 
 /**
- * asideの追加
+ * サイドバーの追加
  */
 function my_custom_sidebar() {
     register_sidebar(array(
-        'name' => __('aside', 'your-theme-textdomain'), // サイドバーの名前
+        'name' => __('Aside', 'your-theme-textdomain'), // サイドバーの名前
         'id' => 'aside', // サイドバーのID
         'description' => __('A custom sidebar for blog posts', 'your-theme-textdomain'), // サイドバーの説明
         'before_widget' => '<aside id="%1$s" class="widget %2$s">', // ウィジェットの前に追加されるHTML
@@ -78,43 +70,31 @@ function my_custom_sidebar() {
         'before_title' => '<h3 class="widget-title">', // ウィジェットタイトルの前に追加されるHTML
         'after_title' => '</h3>', // ウィジェットタイトルの後に追加されるHTML
     ));
-    // register_sidebar(array(
-    //     'name' => __('toc', 'your'), // サイドバーの名前
-    //     'id' => 'toc', // サイドバーのID
-    //     'description' => __('A custom sidebar for blog posts', 'your-theme-textdomain'), // サイドバーの説明
-    // ));
 }
 add_action('widgets_init', 'my_custom_sidebar');
-
-
-
-
-
 
 /**
  * 検索対象を投稿ページのみにするカスタマイズ
  */
 function search_filter($query) {
-    if($query -> is_search) {
-        $query -> set('post_type','post');
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
     }
     return $query;
 }
-add_filter('pre_get_posts','search_filter');
-
-
+add_filter('pre_get_posts', 'search_filter');
 
 /**
- * クラス名付与
+ * コンテンツ内のタグにクラス名を付与する
  */
 function add_custom_classes_to_content($content) {
     $dom = new DOMDocument();
     libxml_use_internal_errors(true); // HTMLエラーを無視する
     $dom->loadHTML('<?xml encoding="utf-8" ?>' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
     libxml_clear_errors();
-    
+
     $xpath = new DOMXPath($dom);
-    
+
     // 各タグに追加するクラス名
     $tags = array(
         'p' => 'my-class__paragraph',
@@ -143,7 +123,7 @@ function add_custom_classes_to_content($content) {
         'code' => 'my-class__code',
         'pre' => 'my-class__pre'
     );
-    
+
     foreach ($tags as $tag => $class) {
         $elements = $xpath->query("//{$tag}");
         foreach ($elements as $element) {
@@ -155,14 +135,6 @@ function add_custom_classes_to_content($content) {
 
     return $dom->saveHTML();
 }
-
 add_filter('the_content', 'add_custom_classes_to_content');
 
-
-
-
-
-
-
 ?>
-

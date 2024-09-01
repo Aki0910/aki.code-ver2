@@ -1,6 +1,4 @@
 <?php get_header(); ?>
-<!-- <div id="stalker"></div> -->
-
 
 <section id="single-works" class="single-works">
     <div class="single-works__inner">
@@ -48,14 +46,14 @@
                 <?php echo esc_html(get_post_meta(get_the_ID(), 'details', true)); ?>
             </p>
 
-            <a class="button single-works__button button__white" href="<?php echo esc_html(get_post_meta(get_the_ID(), 'url', true)); ?>">
-                    <div class="button__content">
-                        <div class="button__img">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-white.png')); ?>" alt="実績一覧を見る">
-                        </div>
-                        <p class="button__text">VIEW ALL</p>
+            <a class="button single-works__button button__white" href="<?php echo esc_html(get_post_meta(get_the_ID(), 'url', true)); ?>" target="_blank" rel="noopener noreferrer">
+                <div class="button__content">
+                    <div class="button__img">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/img/arrow-white.png')); ?>" alt="実績を見る">
                     </div>
-                </a>
+                    <p class="button__text">VIEW ALL</p>
+                </div>
+            </a>
         </div>
         
     </div>
