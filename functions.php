@@ -137,4 +137,32 @@ function add_custom_classes_to_content($content) {
 }
 add_filter('the_content', 'add_custom_classes_to_content');
 
+
+// 記事PV取得
+function getPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count=='') {
+      delete_post_meta($postID, $count_key);
+      add_post_meta($postID, $count_key, '0');
+      return "0 View";
+    }
+    return $count.' Views';
+  }
+  
+  // 記事PVカウント
+  function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count=='') {
+      $count = 0;
+      delete_post_meta($postID, $count_key);
+      add_post_meta($postID, $count_key, '0');
+    } else {
+      $count++;
+      update_post_meta($postID, $count_key, $count);
+    }
+  }
+  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
 ?>

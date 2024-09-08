@@ -470,11 +470,11 @@ img {
 /* ===============================================
 # custom css
 =============================================== */
-.my-class__unorderdList, .my-class__paragraph {
+.my-class__orderdList, .my-class__unorderdList, .my-class__paragraph {
   font-size: clamp(1.4rem, 1.25vw, 1.8rem);
 }
 @media (max-width: 767px) {
-  .my-class__unorderdList, .my-class__paragraph {
+  .my-class__orderdList, .my-class__unorderdList, .my-class__paragraph {
     font-size: clamp(1.4rem, 4.2666666667vw, 1.6rem);
   }
 }
@@ -558,9 +558,20 @@ img {
   padding: 2.7777777778% 2.7777777778% 2.7777777778% 5.5555555556%;
   width: 80%;
 }
-
-.my-class__listItem {
+.my-class__unorderdList .my-class__listItem {
   list-style: disc;
+  line-height: 2;
+}
+
+.my-class__orderdList {
+  border: 3px dotted rgba(0, 104, 183, 0.3);
+  margin: 11.1111111111% auto;
+  padding: 2.7777777778% 2.7777777778% 2.7777777778% 5.5555555556%;
+  width: 80%;
+  list-style-type: decimal;
+}
+.my-class__orderdList .my-class__listItem {
+  list-style: decimal;
   line-height: 2;
 }
 
@@ -1635,6 +1646,7 @@ img {
   transition: filter 0.3s ease;
   transition: filter 0.3s ease, -webkit-filter 0.3s ease;
   overflow: hidden;
+  opacity: 0;
 }
 .top__item img {
   border-radius: 10px;

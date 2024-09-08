@@ -23,6 +23,7 @@
     transform: translate(-50%, -50%) rotate(45deg);
     transition: filter 0.3s ease;
     overflow: hidden;
+    opacity: 0;
 
     img {
         border-radius: 10px;

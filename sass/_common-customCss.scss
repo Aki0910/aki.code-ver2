@@ -91,11 +91,26 @@
     margin: (80/720)*100% auto;
     padding: (20/720)*100% (20/720)*100% (20/720)*100% (40/720)*100%;
     width: 80%;
+
+    .my-class__listItem {
+        list-style: disc;
+        line-height: 2;
+    }
 }
-.my-class__listItem {
-    list-style: disc;
-    line-height: 2;
+.my-class__orderdList {
+    @extend %my-class-base;
+    border: 3px dotted rgba(0, 104, 183, .3);
+    margin: (80/720)*100% auto;
+    padding: (20/720)*100% (20/720)*100% (20/720)*100% (40/720)*100%;
+    width: 80%;
+    list-style-type: decimal;
+
+    .my-class__listItem {
+        list-style: decimal;
+        line-height: 2;
+    }
 }
+
 .my-class__blockquote {
 
 }
