@@ -429,6 +429,8 @@ img {
   height: 13.8888888889vw;
   position: relative;
   margin-top: 5.5555555556vw;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 .button:hover {
   scale: 1.2;
@@ -2234,6 +2236,32 @@ textarea, [type=text],
   content: "Contact";
   color: #E9E9E9;
 }
+.contact-form .button__content {
+  width: 100%;
+  height: 100%;
+}
+.contact-form .button__img {
+  margin: 0 auto;
+  min-width: 3.6rem;
+  width: 4.4444444444vw;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.contact-form .button__text {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: playfair-display, serif;
+  min-width: 12rem;
+  min-height: 12rem;
+  width: 13.8888888889vw;
+  height: 13.8888888889vw;
+}
 
 .contact-form__info {
   line-height: 1.5;
@@ -2333,6 +2361,11 @@ span.wpcf7-spinner {
   .wpcf7-not-valid-tip {
     margin-top: 2.6666666667%;
   }
+}
+
+.wpcf7-submit {
+  width: 100%;
+  height: 100%;
 }
 
 /*reCAPTCHAのロゴを非表示*/
