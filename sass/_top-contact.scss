@@ -150,7 +150,7 @@ span.wpcf7-spinner {
 
 //デフォルトの送信メッセージ削除
 .wpcf7-response-output {
-    display: none;
+    // display: none;
 }
 //未入力の場合のテキストのマージン
 .wpcf7-not-valid-tip {
@@ -159,7 +159,7 @@ span.wpcf7-spinner {
         margin-top: (10/375)*100%;
     }
 }
-.wpcf7-submit {
+.wpcf7-form-control {
     width: 100%;
     height: 100%;
 }

@@ -90,7 +90,7 @@
     border: 3px dotted rgba(0, 104, 183, .3);
     margin: (80/720)*100% auto;
     padding: (20/720)*100% (20/720)*100% (20/720)*100% (40/720)*100%;
-    width: 80%;
+    width: 90%;
 
     .my-class__listItem {
         list-style: disc;
@@ -112,7 +112,10 @@
 }
 
 .my-class__blockquote {
-
+    background: rgba(0, 104, 183, .05);
+    margin: (40/800)*100% auto;
+    padding: (20/800)*100%;
+    width: 90%;
 }
 .my-class__table {
     min-height: 40rem;
