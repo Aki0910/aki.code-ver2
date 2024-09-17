@@ -4,7 +4,6 @@
 # top-topics
 =============================================== */
 
-
 .topics {
   color: $color-text;
 
@@ -20,14 +19,8 @@
 .topics__inner {
   margin-left: (200/1440)*100%;
 }
-.topics__title {
-}
 .topics__content {
   margin-top: (120/1440)*100vw;
-}
-
-.topics__list {
-
 }
 .topics__item {
   border-top: 1px solid $color-text;

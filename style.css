@@ -1372,6 +1372,9 @@ img {
     position: relative;
     z-index: 100;
   }
+  .drawer:hover {
+    cursor: pointer;
+  }
 }
 
 .drawer__bar {
@@ -1438,7 +1441,7 @@ img {
             justify-content: center;
     height: inherit;
     color: #fff;
-    font-size: clamp(1.6rem, 1.3888888889vw, 2rem);
+    font-size: clamp(2rem, 5.3333333333vw, 2.8rem);
     font-family: playfair-display, serif;
   }
 }

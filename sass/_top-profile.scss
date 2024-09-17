@@ -22,8 +22,6 @@
         width: (335/375)*100vw;
     }
 }
-.profile__list {
-}
 .profile__name {
     font-family: $font-en;
     font-size: clamp(1.6rem,(28/1440)*100vw,2.8rem);
@@ -37,7 +35,6 @@
     font-size: clamp(1.2rem,(16/1440)*100vw,1.6rem);
     line-height: 2;
     margin-top: (40/645)*100%;
-
 }
 .sns__list {
     align-items: center;

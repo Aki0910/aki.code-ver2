@@ -78,14 +78,9 @@
     margin-top: (80/720)*100%;
 }
 
-
 .main__searchResult {
     margin: (80/720)*100% 0;
 }
-
-
-
-
 
 .main__blogList {
   width: (700/1440)*100vw;
@@ -93,7 +88,6 @@
   @include mq('sp') {
     width: 100%;
   }
-
 }
 .main__blogItem {
   background: $color-main;

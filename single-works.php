@@ -13,7 +13,6 @@
         ?>
 
         <div class="single-works__content">
-
             <div class="slider">
                 <ul class="slider__wrapper">
                     <li class="slider__img">
@@ -31,7 +30,6 @@
                             <img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>" />
                         <?php endif; ?>
                     </li>
-
                 </ul>
                 <div class="slider__navigation">
                     <div class="slider__nav-dot" data-index="0"></div>
@@ -39,13 +37,11 @@
                     <div class="slider__nav-dot" data-index="2"></div>
                 </div>
             </div>
-
             <h3 class="single-works__company"><?php echo get_the_title(); ?></h3>
             <p class="single-works__role"><?php echo esc_html(get_post_meta(get_the_ID(), 'role', true)); ?></p>
             <p class="single-works__details">
                 <?php echo esc_html(get_post_meta(get_the_ID(), 'details', true)); ?>
             </p>
-
             <a class="button single-works__button button__white" href="<?php echo esc_html(get_post_meta(get_the_ID(), 'url', true)); ?>" target="_blank" rel="noopener noreferrer">
                 <div class="button__content">
                     <div class="button__img">
@@ -54,10 +50,8 @@
                     <p class="button__text">VIEW ALL</p>
                 </div>
             </a>
-        </div>
-        
+        </div>        
     </div>
 </section>
-
 
 <?php get_footer(); ?>

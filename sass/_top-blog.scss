@@ -4,7 +4,6 @@
 # top-blog
 =============================================== */
 
-
 .blog {
   .section__title {
     color: $color-text;
@@ -28,7 +27,6 @@
     max-width: 50rem;
     margin: (40/375)*100% auto 0;
   }
-
 }
 
 .blog__list {
@@ -40,7 +38,6 @@
     min-width: 0;
     width: 100%;
   }
-  
 }
 .blog__item {
   background: $color-main;
@@ -102,8 +99,6 @@
   padding: (5/360)*100% (14/360)*100%;
   text-align: center;
   min-width: .8rem;
-}
-.card__date {
 }
 .card__head {
   font-size: clamp(1.0rem,(16/1440)*100vw,1.6rem);

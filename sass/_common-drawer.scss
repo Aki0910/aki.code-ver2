@@ -7,13 +7,18 @@
 .drawer {
     display: none;
 
+    
     @include mq('sp') {
-      display: block;
-      width: 6.4rem;
-      height: 6.4rem;
-      margin-left: auto;
-      position: relative;
-      z-index: 100;
+        display: block;
+        width: 6.4rem;
+        height: 6.4rem;
+        margin-left: auto;
+        position: relative;
+        z-index: 100;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 .drawer__bar {
@@ -66,7 +71,7 @@
         justify-content: center;
         height: inherit;
         color: $color-main;
-        font-size: clamp(1.6rem,(20/1440)*100vw,2.0rem);
+        font-size: clamp(2.0rem,(20/375)*100vw,2.8rem);
         font-family: $font-en;
     }
 }

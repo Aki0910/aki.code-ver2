@@ -11,7 +11,6 @@
                 <article class="main__card">
                     <div class="main__inner">
                         <h2 class="section__title">ブログ</h2>
-
                         <?php
                         if (is_post_type_archive('works') || is_singular('works')) {
                             get_template_part('template/breadcrumb-works');
@@ -19,7 +18,6 @@
                             get_template_part('template/breadcrumb');
                         }
                         ?>
-
                         <div class="main__cardTitle">
                             <h2 class="main__card--title"><?php the_title(); ?></h2>
                             <ul class="main__card--meta">
@@ -164,20 +162,14 @@
                     </div>
                 </article>
                 <?php endwhile; ?>
-
                 <?php
                 if(function_exists('pagination')) {
                     pagination($wp_query->max_num_pages);
                 }
                 ?>
             <?php endif; ?>
-
-
         </main>
-
         <?php get_sidebar(); ?>
-
     </div>
-
 
 <?php get_footer(); ?>
