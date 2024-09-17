@@ -31,15 +31,18 @@
 			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<!-- End Google Tag Manager (noscript) -->
 
-  <?php
-// ページが archive-works.php または single-works.php かどうかを判定
-if (is_post_type_archive('works') || is_singular('works')) {
-    // archive-works.php または single-works.php の場合
-    get_template_part('template/header-works');
-} else {
-    // その他のページの場合
-    get_template_part('template/header-top');
-}
-?>
+      <?php
+      // ページが archive-works.php または single-works.php かどうかを判定
+      if (is_post_type_archive('works') || is_singular('works')) {
+          // archive-works.php または single-works.php の場合
+          get_template_part('template/header-works');
+      } elseif (is_front_page() || is_home()) {
+          // index.php の場合（フロントページまたはブログページ）
+          get_template_part('template/header-top');
+      } else {
+          // その他のページの場合
+          get_template_part('template/header-other');
+      }
+      ?>
 
    

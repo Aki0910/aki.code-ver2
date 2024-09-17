@@ -5,8 +5,8 @@
     <h1 class="header-works__logo"><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
     <nav class="header-works__nav">
       <ul class="header-works__list">
-        <li class="header-works__item"><a class="button__white" href="<?php echo esc_url(home_url('#works')); ?>">Works</a></li>
-        <li class="header-works__item"><a class="button__white" href="<?php echo esc_url(home_url('#blog')); ?>">Blog</a></li>
+        <li class="header-works__item"><a class="button__white" href="<?php echo esc_url(get_post_type_archive_link('works')); ?>">Works</a></li>
+        <li class="header-works__item"><a class="button__white" href="<?php echo esc_url(home_url('/post/')); ?>">Blog</a></li>
         <li class="header-works__item"><a class="button__blue" href="<?php echo esc_url(home_url('#contact')); ?>"><span class="header__contact">Contact<span></a></li>
       </ul>
     </nav>
@@ -20,9 +20,8 @@
 
 <nav class="drawer__nav">
   <ul class="drawer__list">
-    <li class="drawer__item"><a href="#works">WORKS</a></li>
-    <li class="drawer__item"><a href="#service">SERVICE</a></li>
-    <li class="drawer__item"><a href="#profile">PROFILE</a></li>
-    <li class="drawer__item"><a href="#contact">CONTACT</a></li>
+    <li class="drawer__item"><a href="<?php echo esc_url(get_post_type_archive_link('works')); ?>">Works</a></li>
+    <li class="drawer__item"><a href="<?php echo esc_url(home_url('/post/')); ?>">Blog</a></li>
+    <li class="drawer__item"><a href="<?php echo esc_url(home_url('#contact')); ?>">Contact</a></li>
   </ul>
 </nav>

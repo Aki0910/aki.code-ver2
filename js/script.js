@@ -189,8 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const y = e.clientY - rect.top;
 
             gsap.to(stalker, {
-                x: x,
-                y: y,
+                x: x - 5,
+                y: y - 20,
                 opacity: 0.5,
                 duration: 0.3,
                 ease: "power1.out"
@@ -240,20 +240,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-const toTop = document.querySelector('.to-top');
-const windowHeight = window.outerHeight
-window.addEventListener('scroll', function () {
-  if (window.scrollY > 700) {
-    toTop.classList.add('js-fadeIn')
-  } else {
-    toTop.classList.remove('js-fadeIn')
-  }
-});
+    const toTop = document.querySelector('.to-top');
+    const windowHeight = window.outerHeight
+    window.addEventListener('scroll', function () {
+    if (window.scrollY > 700) {
+        toTop.classList.add('js-fadeIn')
+    } else {
+        toTop.classList.remove('js-fadeIn')
+    }
+    });
 
-toTop.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
+    toTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const drawer = document.querySelector('.drawer');
+    const drawerNav = document.querySelector('.drawer__nav');
+    const body = document.querySelector('body'); // bodyを取得
+  
+    // GSAPでドロワー開閉のアニメーション設定
+    gsap.set(drawerNav, { x: '100%' }); // 初期位置は画面外
+  
+    // ドロワー開閉のトグル関数
+    function toggleDrawer() {
+      const isOpen = drawer.classList.contains('js-open');
+  
+      if (isOpen) {
+        // ドロワーを閉じるアニメーション
+        gsap.to(drawerNav, {
+          duration: 0.3,
+          x: '100%',
+          ease: 'power1.out',
+          onComplete: () => {
+            drawer.classList.remove('js-open');
+          }
+        });
+      } else {
+        // ドロワーを開くアニメーション
+        gsap.to(drawerNav, {
+          duration: 0.3,
+          x: '0%',
+          ease: 'power1.out',
+          onComplete: () => {
+            drawer.classList.add('js-open');
+          }
+        });
+      }
+    }
+  
+    // ドロワーのトグルボタンがクリックされたとき
+    drawer.addEventListener('click', function(event) {
+      event.stopPropagation(); // イベントバブリングを防ぐ
+      toggleDrawer();
+    });
+  
+    // ドロワー外クリックでドロワーを閉じる処理
+    document.addEventListener('click', function(event) {
+      // drawerが開いている場合、かつクリックがdrawer外で発生した場合
+      if (drawer.classList.contains('js-open') && !drawer.contains(event.target)) {
+        // ドロワーを閉じるアニメーション
+        gsap.to(drawerNav, {
+          duration: 0.3,
+          x: '100%',
+          ease: 'power1.out',
+          onComplete: () => {
+            drawer.classList.remove('js-open');
+          }
+        });
+      }
+    });
+  });
+  
+  

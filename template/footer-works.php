@@ -12,8 +12,8 @@
           </li>
           <li class="footer-works__right">
             <ul class="footer-works__list">
-              <li class="footer-works__item"><a class="button__white" href="<?php echo esc_url(home_url('#works')); ?>">Works</a></li>
-              <li class="footer-works__item"><a class="button__white" href="<?php echo esc_url(home_url('#blog')); ?>">Blog</a></li>
+              <li class="footer-works__item"><a class="button__white" href="<?php echo esc_url(get_post_type_archive_link('works')); ?>">Works</a></li>
+              <li class="footer-works__item"><a class="button__white" href="<?php echo esc_url(home_url('/post/')); ?>">Blog</a></li>
               <li class="footer-works__item"><a class="button__white" href="<?php echo esc_url(home_url('#contact')); ?>">Contact</a></li>
             </ul>
           </li>

@@ -16,6 +16,7 @@
     width: (800/1440)*100vw;
 
     @include mq('sp') {
+      margin-top: (80/375)*100%;
       width: 100%;
     }
 }

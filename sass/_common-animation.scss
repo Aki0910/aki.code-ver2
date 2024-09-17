@@ -8,11 +8,28 @@
   opacity: 0;
   transform: translateY(5rem);
 }
-
+.drawer__nav.js-open {
+  transform: translateX(0%);
+}
+.drawer.js-open {
+  .drawer__bar1 {
+    top: 50%;
+    transform: rotate(30deg);
+    width: 60%;
+  }
+.drawer__bar2 {
+    display: none;
+  }
+.drawer__bar3 {
+    top: 50%;
+    transform: rotate(-30deg);
+    width: 60%;
+  }
+}
 .mouse-stalker {
   position: absolute;
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -52,7 +69,6 @@
       max-width: 6.4rem;
       width: (48/375)*100vw;
   }
-
 }
 .to-top.js-fadeIn {
   visibility: visible;

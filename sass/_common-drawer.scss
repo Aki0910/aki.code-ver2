@@ -22,6 +22,7 @@
     right: 0;
     height: 0.2rem;
     background: $color-text;
+    transition: all .3s ease 0s;
 }
 .drawer__bar1 {
     top: 30%;
@@ -34,7 +35,6 @@
 .drawer__bar3 {
     top: 70%;
     width: 40%;
-
 }
 .header-works {
     .drawer__bar {
@@ -75,8 +75,7 @@
     @include mq('sp') {
         &:not(:nth-child(1)) {
             margin-top: (40/300)*100vw;
-        }
-      
+        } 
     }
-
 }
+  

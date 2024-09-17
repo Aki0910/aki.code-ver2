@@ -1124,10 +1124,31 @@ img {
           transform: translateY(5rem);
 }
 
+.drawer__nav.js-open {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.drawer.js-open .drawer__bar1 {
+  top: 50%;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  width: 60%;
+}
+.drawer.js-open .drawer__bar2 {
+  display: none;
+}
+.drawer.js-open .drawer__bar3 {
+  top: 50%;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  width: 60%;
+}
+
 .mouse-stalker {
   position: absolute;
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 50%;
   pointer-events: none;
   -webkit-transform: translate(-50%, -50%);
@@ -1359,6 +1380,8 @@ img {
   right: 0;
   height: 0.2rem;
   background: #1a1a1a;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .drawer__bar1 {
@@ -2531,6 +2554,7 @@ span.wpcf7-spinner {
 }
 @media (max-width: 767px) {
   .main {
+    margin-top: 21.3333333333%;
     width: 100%;
   }
 }
